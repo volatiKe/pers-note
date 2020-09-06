@@ -1,4 +1,6 @@
 {
     "editor.renderWhitespace": "all",
-    "files.defaultLanguage": "markdown"
+    "files.defaultLanguage": "markdown",
+    "editor.wordWrap": "on",
+    "editor.renderControlCharacters": true
 }

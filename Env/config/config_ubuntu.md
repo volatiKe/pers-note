@@ -128,24 +128,13 @@
 
 ---
 
-## 9. VSCode
-
-* 使用UbuntuUpates源
-* 用户配置文件：.config/Code/User/setting.json
-* 插件：studio icons/one dark pro/markdown all in one/markdown preview enhanced/markdown lint/todo tree
-* 自动换行：word wrap
-* 显示空格和 tab：renderControlCharacters / renderWhitespace
-* zsh 使用 agnoster 主题后，font family 添加 Powerline 字体（Mac 下为 Roboto Mono for Powerline）
-
----
-
-## 10. Chrome
+## 9. Chrome
 
 * 使用UbuntuUpdates源
 
 ---
 
-## 11. SS
+## 10. SS
 
 * AppImage文件，文件属性设置为可执行
 * 创建软连接
@@ -162,13 +151,13 @@
 
 ---
 
-## 12. VLC
+## 11. VLC
 
 * 使用apt-get安装
 
 ---
 
-## 13. Git
+## 12. Git
 
 * 使用 apt-get 安装 git
 * 配置 git 信息
@@ -197,7 +186,7 @@
 
 ---
 
-## 14. zsh
+## 13. zsh
 
 * 使用 apt-get 安装 zsh
 * 修改 shell
@@ -224,7 +213,7 @@
   
 ---
 
-## 15. nvm
+## 14. nvm
 
 * 在 /etc/profile.d/ 的 sh 文件中添加环境变量
   
@@ -249,7 +238,7 @@
 
 ---
 
-## 16. Samba
+## 15. Samba
 
 * apt-get 安装
 * 共享目录配置
@@ -266,7 +255,7 @@
 
 ---
 
-## 17. Maven
+## 16. Maven
 
 settings.xml：
 
@@ -293,7 +282,7 @@ settings.xml：
 </mirrors>
 ```
 
-## 18. 服务器配置
+## 17. 服务器配置
 
 * ssh 长连接：/etc/ssh/sshd_config.d/xxx.conf
   > ClientAliveInterval 60：60s 向 client 发送一次心跳
