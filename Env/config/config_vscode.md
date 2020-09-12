@@ -4,6 +4,10 @@
 
 使用UbuntuUpates源
 
+## 主题
+
+atom material theme
+
 ## 插件
 
 * markdown all in one
@@ -24,6 +28,10 @@
         "editor.renderWhitespace": "all",
         "files.defaultLanguage": "markdown",
         "editor.wordWrap": "on",
-        "editor.renderControlCharacters": true
+        "editor.renderControlCharacters": true,
+        "editor.fontSize": 16,
+        "editor.fontWeight": "400",
+        "editor.lineHeight": 24,
+        "editor.letterSpacing": 0.5
     }
     ```

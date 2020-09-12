@@ -66,7 +66,15 @@ export NVM_DIR="$HOME/.nvm"
 
 ## Maven
 
-自定义仓库目录需要增加权限
+* 自定义仓库目录需要增加权限
+* 通过 homebrew 安装的 maven 必须指定 JAVA_HOME
+  
+    ```shell
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export PATH=$JAVA_HOME/bin:$PATH
+    ```
+
+    注意，mac 的 java_home 是保存在 /usr/libexec/java_home 中的
 
 ---
 
