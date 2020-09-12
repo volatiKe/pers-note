@@ -65,10 +65,15 @@ Java Web
 * [分布式](Web/distribution/distribution.md)
 * [系统设计和中间件](Web/system_design/system_design.md)
 * [场景设计](Web/design/design.md)
+
+工具
+
+* [git](Env/tool/git.md)
   
 环境配置
 
-* [Ubuntu 配置](Env/config/config_ubuntu.md)
-* [Mac 配置](Env/config/config_mac.md)
-* [IntelliJ 配置](Env/config/config_intellij.md)
-* [Hexo 配置](Env/config/config_hexo.md)
+* [ubuntu 配置](Env/config/config_ubuntu.md)
+* [mac 配置](Env/config/config_mac.md)
+* [intellij 配置](Env/config/config_intellij.md)
+* [vscode](Env/config/config_vscode.md)
+* [hugo 配置](Env/config/config_hugo.md)
