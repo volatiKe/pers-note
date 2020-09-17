@@ -17,5 +17,19 @@
 * maven 支持从命令行直接调用插件的目标，因为有的插件功能不适合绑定在生命周期上。用法是 <插件前缀：目标>，并支持通过 -D 传入参数：
 
     ```shell
-    mvn archetype:generate -DgroupId=xxx.xxx -DartifactId=xxx-xxx -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart
+    mvn archetype:generate -DgroupId=pers.pk -DartifactId=my-snack -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart (archetypeCalalog=internal) -s xxx/settings.xml
     ```
+
+## 使用 Tips
+
+### settings.xml
+
+* 终端执行 mvn ，会取默认路径的 settings.xml，即 ${user.home}/.m2/settings.xml
+* IntelliJ 对项目设置 settings.xml 路径后，IntelliJ 的 Maven 集成插件执行对应命令时便会按照指定的 settings.xml 中的配置进行
+* mvn 可以指定 settings.xml
+* 对 mirrorOf 配置的仓库的请求会被转发到 mirror 中配置的 url，所以一般配置 central，因为 Maven 的 super pom 中仓库名为 central，插件仓库也一样
+* settings.xml 优先级：.m2 > conf
+
+### 插件
+
+* help 插件可以看到 super pom 的配置
