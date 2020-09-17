@@ -61,7 +61,7 @@ JVM
 
 Java Web
 
-* [Spring](Web/spring/spring.md)
+* [spring](Web/spring/spring.md)
 * [分布式](Web/distribution/distribution.md)
 * [系统设计和中间件](Web/system_design/system_design.md)
 * [场景设计](Web/design/design.md)
@@ -69,6 +69,8 @@ Java Web
 工具
 
 * [git](Env/tool/git.md)
+* [maven](Env/tool/maven.md)
+* [xml](Env/tool/xml.md)
   
 环境配置
 
