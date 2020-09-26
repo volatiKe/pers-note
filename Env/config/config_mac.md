@@ -33,21 +33,37 @@ MAC 下 bash 的配置文件加载顺序如下：
 
 ---
 
-## .zshrc
+## zprezto
 
-需要注意的是，~/.zshrc 同 ~/.bashrc，都是在 shell 打开时加载，所以命令的 alias、用户级环境变量都可以配置在此文件中
+配置 zsh 的工具，类似 oh-my-zsh
 
-```shell
-alias gitlog="git log --graph --pretty=oneline --abbrev-commit"
-alias work="cd /Users/dxm/Workspace"
-alias aliyun="xxx"
+* .zprofile 配置 pokemonsay
 
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
-export NVM_DIR="$HOME/.nvm"
+    ```shell
+    # pokemonsay
+    echo
+    echo "=============== Quote Of The Day ==============="
+    echo
+    pokemonsay Welcome!
+    echo
+    echo "================================================"
+    echo
+    ```
 
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-```
+* .zpreztorc 配置 shell 相关
+  * theme:sorin
+  * load module:git
+  * editor:vi
+* .zshrc 配置 alias
+
+* .zshenv 配置环境变量
+
+    ```shell
+    export MYSQL_CLIENT_HOME=/usr/local/opt/mysql-client
+    export JAVA_HOME=$(/usr/libexec/java_home)      
+    export PATH=$JAVA_HOME/bin:$MYSQL_CLIENT_HOME/bin:$PATH     
+    export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+    ```
 
 ---
 
@@ -83,7 +99,7 @@ export NVM_DIR="$HOME/.nvm"
 修改密码：
 
 ```shell
-mysqladmin ‐u用户名 ‐p旧密码 password 新密码
+mysqladmin ‐u 用户名 ‐p 旧密码 password 新密码
 ```
 
 ---
@@ -161,7 +177,6 @@ mysqladmin ‐u用户名 ‐p旧密码 password 新密码
         cd "$FILE"
         /usr/local/bin/rz --rename --escape --binary --bufsize 4096
         sleep 1
-        echo
         echo
         echo \# Sent \-\> $FILE
     fi
