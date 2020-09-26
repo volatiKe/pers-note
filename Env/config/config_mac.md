@@ -60,8 +60,8 @@ MAC 下 bash 的配置文件加载顺序如下：
 
     ```shell
     export MYSQL_CLIENT_HOME=/usr/local/opt/mysql-client
-    export JAVA_HOME=$(/usr/libexec/java_home)      
-    export PATH=$JAVA_HOME/bin:$MYSQL_CLIENT_HOME/bin:$PATH     
+    export JAVA_HOME=$(/usr/libexec/java_home)
+    export PATH=$JAVA_HOME/bin:$MYSQL_CLIENT_HOME/bin:$PATH
     export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
     ```
 
