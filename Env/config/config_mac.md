@@ -70,13 +70,22 @@ MAC 下 bash 的配置文件加载顺序如下：
 ## HomeBrew
 
 * 使用此工具安装所有命令行工具
-* 命令行工具默认安装目录：
-  > /usr/local/Cellar
 * 替换 bottles 源：
 
   ```shell
   export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
   ```
+
+* 默认 HOMEBREW_PREFIX 为 ```/usr/local```，使用 ```brew --prefix``` 可以查看 HOMEBREW_PREFIX
+  * keg 安装位置：```HOMEBREW_PREFIX/Cellar```
+  * 可执行文件位置：```HOMEBREW_PREFIX/bin```
+* 如何理解「homebrew」、「formula」、「keg」
+  * brew 本身是酿造、酿酒的意思，会用这个词的原因是 homebrew 的安裝方式为下载源码在本地（home）做编译
+  * 酿酒需要配方，所以 brew 命令会根据 formula 编译源码并安装完毕，安装完的整个文件夹为 keg
+* 如何理解「keg-only」
+  * 表示整个工具只存放在酒桶里，不会跑出桶外，也就是 brew 不会自动做做软链到 ```HOMEBREW_PREFIX/bin```，避免与系统已有的命令冲突
+* 如何理解「libexc」目录
+  * 可以理解为 homebrew 会将需要或应该被外部调用的东西封装在和 libexc 平级的 bin 或 lib 中，这两个目录也正是 homebrew 会自动创建软链的目录，而 libexc 认为是 formula 私有的东西，可以是一些细节的实现或其他
 
 ---
 
