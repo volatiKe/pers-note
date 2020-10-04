@@ -2,7 +2,7 @@
 
 ## 安装
 
-使用UbuntuUpates源
+使用 UbuntuUpates 源
 
 ## 主题
 
@@ -16,7 +16,6 @@ atom material theme
 * pangu-markdown
 * todo tree
 * sftp
-* kanban
 * project manager
 
 ## 配置

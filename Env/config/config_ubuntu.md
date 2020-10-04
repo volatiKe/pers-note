@@ -2,80 +2,31 @@
 
 ---
 
-## 0. 预备文件
-
-1. chrome源的key
-2. ss配置文件
-3. ss图标
-4. switchyomega配置文件
-5. vim配置文件
-6. vscode配置文件
-7. rime配置文件
-
----
-
 ## 1. 系统配置
 
-* 设置root用户密码
+* 设置 root 用户密码
   > sudo passwd root
-* 设置sudo免密码
+* 设置 sudo 免密码
   > sudo visudo
   > sudo ALL=(ALL:ALL) NOPASSWD:ALL
 * 自定义命令行窗口：新定义快捷键
   > gnome-terminal --geometry 90x20--10--10
-* 修改grub引导：/etc/default/grub
-
----
-
-## 2. Rime
-
-* 安装ibus-rime
-  > sudo apt-get install ibus-rime
-
-* 指定同步目录：installation.yaml
-
-    ```yaml
-    sync_dir: "/home/panke/Config/Rime"
-    ```
-
-* luna_pinyin默认简中：luna_pinyin.custom.yaml
-
-    ```yaml
-    patch:
-      switches:
-        - name: ascii_mode
-        reset: 0
-        states: [ 中文, 西文 ]
-        - name: full_shape
-        states: [ 半角, 全角 ]
-        - name: simplification
-        reset: 1
-        states: [ 漢字, 汉字 ]
-    ```
-
----
-
-## 3. 主题配置
-
-* 安装配置工具
-  > sudo apt install gnome-tweak-tool
-
-* 安装主题
+* 修改 grub 引导：/etc/default/grub
 
 ---
 
 ## 4. Vim
 
-* 使用apt-get安装vim
+* 使用 apt-get 安装 vim
 * 系统配置文件：/etc/vim/vimrc
-* 用户配置文件：用户根目录下创建.vimrc
+* 用户配置文件：用户根目录下创建 .vimrc
   > syntax on #开启语法高亮
   > set ruler #显示当前坐标
   > set showmode #显示模式
   > set showcmd #显示当前输入的指令
-  > set_Co=256 #启用256色
+  > set t_Co=256 #启用 256 色
   > set number #显示行号
-  > set tabstop=4 #设定tab长度为4
+  > set tabstop=4 #设定 tab 长度为 4
   > set showmatch #显示括号匹配
   > filetype indent on #开启文件类型检查，并且载入与该类型对应的缩进规则
   > set autoindent #按下回车键后，下一行的缩进会自动跟上一行的缩进保持一致
@@ -83,9 +34,9 @@
   > set laststatus=2 #显示状态栏
   > set hlsearch #搜索结果高亮
   > set autoread #如果在编辑过程中文件发生外部改变，就会发出提示
-  > set encoding=utf-8 #设置vim内部编码为utf-8
+  > set encoding=utf-8 #设置 vim 内部编码为 utf-8
   > set fileencoding=utf-8 #当前编辑的文件的字符编码方式，保存文件时也会将文件保存为这种字符编码方式，不管是否新文件都如此
-  > set fileencodings=utf-8,cp936 启动时会按照它所列出的字符编码方式逐一探测即将打开的文件的字符编码方式，并且将fileencoding设置为最终探测到的字符编码方式，因此最好将Unicode编码方式放到这个列表的最前
+  > set fileencodings=utf-8 #cp936 启动时会按照它所列出的字符编码方式逐一探测即将打开的文件的字符编码方式，并且将 fileencoding 设置为最终探测到的字符编码方式，因此最好将 Unicode 编码方式放到这个列表的最前
 
 ---
 
@@ -109,8 +60,8 @@
 * 输入：
   > xprop WM_CLASS
 * 点击对应程序的窗口
-* desktop文件内增加：
-  > StartupWMClass=WM_CLASS第二个字符串的内容
+* desktop 文件内增加：
+  > StartupWMClass=WM_CLASS 第二个字符串的内容
 
 目前不知道什么原因，在创建 desktop 文件时就添加这一项，则无法找到图标。
 
@@ -124,36 +75,66 @@
   deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse
   ```
 
-* 安装sysv-rc-conf
+* 安装 sysv-rc-conf
 
 ---
 
 ## 9. Chrome
 
-* 使用UbuntuUpdates源
+* 使用 UbuntuUpdates 源
 
 ---
 
-## 10. SS
+## 10. Clash
 
-* AppImage文件，文件属性设置为可执行
-* 创建软连接
-  > sudo ln -s path/filename /usr/bin/xxx
-* 在/usr/share/applications/下创建xxx.desktop图标文件
-  > [Desktop Entry]
-  > Type=Application #类型
-  > Name=xxx # 名称
-  > Icon=xxx # 图标路径
-  > Exec=xxx # 执行路径，与软链接名（非路径）相同
-  > Categories=xxx # 类别
-* SwitchyOmega插件
-* SwitchyOmega插件配置文件
+* 安装
+
+  1. 文件增加可执行权限
+
+      ```shell
+      chmod +x clash
+      ```
+
+  2. 下载 Contry.mmdb
+  3. 下载机场的配置文件，替换 ```~/.config/config.yaml```
+
+      ```shell
+      sudo curl Clash托管链接   >>  config.yaml
+      ```
+
+  4. 在配置文件中增加以下配置
+
+      ```shell
+      external-controller: 127.0.0.1:9090
+      secret: 'test'
+      ```
+
+  5. 访问 http://clash.razord.top
+  6. 配置系统 http & https & socks 代理
+
+* 添加图标
+
+  1. 创建软连接
+  
+      ```shell
+      sudo ln -s path/filename /usr/bin/xxx
+      ```
+
+  2. 在/usr/share/applications/下创建 xxx.desktop 图标文件
+
+      ```shell
+      [Desktop Entry]
+      Type=Application #类型
+      Name=xxx # 名称
+      Icon=xxx # 图标路径
+      Exec=xxx # 执行路径，与软链接名（非路径）相同
+      ```
 
 ---
 
 ## 11. VLC
 
-* 使用apt-get安装
+* 使用 apt-get 安装
 
 ---
 
@@ -182,7 +163,7 @@
   ssh -T git@git.oschina.net
   ```
 
-* ssh文件夹下会生成known_hosts文件记录已添加key的主机
+* ssh 文件夹下会生成 known_hosts 文件记录已添加 key 的主机
 
 ---
 
@@ -195,7 +176,7 @@
 * 更换 agnoster 主题
 * 安装 powerline 字体
   > sudo apt-get install fonts-powerline
-* 更换shell profile
+* 更换 shell profile
 * zsh 下配置文件加载顺序： <http://zsh.sourceforge.net/Doc/Release/Files.html>
 
   ```shell
@@ -295,7 +276,7 @@ settings.xml：
 
 * MySQL
   * docker 安装
-  * 需要配置数据j卷映射
+  * 需要配置数据 j 卷映射
   * 需要设置端口号
   * 8.0+ 版本的 root@% 用户的密码加密方式需要设置为  caching_sha2_password：
   
