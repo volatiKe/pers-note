@@ -41,12 +41,7 @@ MAC 下 bash 的配置文件加载顺序如下：
 
     ```shell
     # pokemonsay
-    echo
-    echo "=============== Quote Of The Day ==============="
-    echo
     pokemonsay Welcome!
-    echo
-    echo "================================================"
     echo
     ```
 
