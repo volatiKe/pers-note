@@ -71,6 +71,7 @@ Java Web
 * [git](Env/tool/git.md)
 * [maven](Env/tool/maven.md)
 * [xml](Env/tool/xml.md)
+* [shell](Env/tool/shell.md)
   
 环境配置
 
