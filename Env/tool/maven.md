@@ -33,3 +33,22 @@
 ### 插件
 
 * help 插件可以看到 super pom 的配置
+
+## pom.xml
+
+### pom 导入
+
+目前引入 spring cloud 相关依赖时使用的是以下方式：
+
+```xml
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring.cloud-version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+```
+
+* maven 的多模块项目中可以使用 parent 定义父项目，从而继承父项目的依赖等属性，但是 maven 只能单继承，如果使用 parent 的方式继承 spring 依赖，则无法继承其他依赖
+* 如果将 pom 文件的 packaging 定义为 pom，则可以使用导入的方式引入多个 pom，从而实现多继承，需要注意的是引入 pom 时 type 必须为 pom
