@@ -212,8 +212,8 @@ mysqladmin ‐u 用户名 ‐p 旧密码 password 新密码
 1. Profiels -> General -> Reuse previos session's directory
 2. vim ~/.ssh/config
 
-    '''shell
+    ```shell
     host *
     ControlMaster auto
     ControlPath ~/.ssh/master-%r@%h:%p
-    '''
+    ```
