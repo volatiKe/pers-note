@@ -109,7 +109,7 @@
       secret: 'test'
       ```
 
-  5. 访问 http://clash.razord.top
+  5. 访问 [http://clash.razord.top]
   6. 配置系统 http & https & socks 代理
 
 * 添加图标

@@ -2,16 +2,19 @@
 
 ## 脚本执行
 
+需要知道的：
+
+1. export 用于新增当前 shell 的环境变量
+2. 被 export 出来的变量虽然可以被子 shell 使用，但只是一个拷贝，不会影响到父 shell 中的值以及其它子 shell 中的值
+3. 一个 shell 中的系统环境变量才会被复制到子 shell 中（用 export 定义的变量）
+4. 一个 shell 中的系统环境变量只对该 shell 或者它的子 shell 有效，该 shell 结束时变量消失（并不能返回到父 shell 中）
+5. 不用 export 定义的变量只对该 shell 有效，对子 shell 是无效的
+
 |执行方式|是否开启子 shell|脚本中的变量可读性|是否需要脚本的可执行权限|
 |---|---|---|---|
-|source（或```.```)|否|脚本中创建的变量或者环境变量（export 的变量）相当于是在当前 shell 中创建的，当前 shell 可以访问，所以 source 执行修改后的配置文件会直接生效|不需要|
-|bash（或 sh、zsh)|是|脚本中创建的变量或者环境变量（export 的变量）只在子 shell 中有效，当前 shell 无法访问|不需要|
+|source（或```.```)|否|只是简单地读取脚本的语句并依次在当前 shell 中执行，没有建立新的子 shell。所以脚本里面所有新建、改变变量的语句都会保存在当前 shell 中|不需要|
+|bash（或 sh、zsh)|是|该子 shell 继承父 shell 的环境变量，但子 shell 新建的、改变的变量不会被带回父 shell|不需要|
 |./|是|同上|需要|
-
-**export**:export 是 bash 的一个内置命令，可以将父 shell 里的变量导出供子 shell 使用
-
-* 用 export 导出的变量放在「导出变量列表」中，它可以被子 shell 拷贝并使用
-* 被 export 出来的变量虽然可以被子 shell 使用，但只是一个拷贝，不会影响到父 shell 中的值以及其它子 shell 中的值
 
 ## sed
 
