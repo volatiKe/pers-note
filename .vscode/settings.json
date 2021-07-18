@@ -3,8 +3,8 @@
     "files.defaultLanguage": "markdown",
     "editor.wordWrap": "on",
     "editor.renderControlCharacters": true,
-    "editor.fontSize": 16,
-    "editor.fontWeight": "400",
+    "editor.fontSize": 18,
+    "editor.fontWeight": "500",
     "editor.lineHeight": 24,
     "editor.letterSpacing": 0.5
 }
