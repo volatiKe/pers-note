@@ -56,3 +56,4 @@ awk -F '分隔符' '{命令}' input-file
 * **-H**: 指定请求头，如```-H 'Content-Type: application/json'```
 * **-d**:POST 请求时指定请求体，需要注意的是这个参数会自动加上```Content-Type : application/x-www-form-urlencoded```这个请求头，并且转换为 POST 请求
 * **-o**: 将请求的响应保存为文件，如```curl -o filename.html https://www.baidu.com```，相当于```wget```
+* **-s**: 不显示进度

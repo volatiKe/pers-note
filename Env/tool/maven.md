@@ -33,6 +33,11 @@
 ### 插件
 
 * help 插件可以看到 super pom 的配置
+* 查看依赖树：
+
+  ```shell
+  mvn -Dverbose -DoutputFile=tree
+  ```
 
 ## pom.xml
 
