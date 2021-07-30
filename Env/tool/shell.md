@@ -47,6 +47,15 @@ awk -F '分隔符' '{命令}' input-file
   * NF: 一行分割后域的个数
   * NR: 行号
 
+```shell
+awk -F "|" '{OFS="|"} {$9=20210302}1' temp > result
+```
+
+表示将 temp 中的第 9 列替换为 20210302
+
+* 替换后的行默认使用空格做分隔符，所以需要指定分隔符
+* 1 表示打印替换后的行
+
 ## curl
 
 * **-X**: 指定请求方式，不写时默认 GET，如```curl -X POST https://www.baidu.com```
