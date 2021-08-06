@@ -25,3 +25,9 @@
   * 发起 I/O 请求 or 等待网络数据包 -> blocked
 * blocked：
   * I/O 结束 or 获取到网络数据包 -> ready
+
+## 进程列表
+
+OS 用来追踪运行在系统中的程序的数据结构
+
+PCB（Process Control Block）or Process Descriptor：存储有关进程信息的单个数据结构
