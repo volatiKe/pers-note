@@ -12,7 +12,7 @@
 Direct Execution 指**直接在 CPU 上运行程序**，这样能够使得程序运行的尽可能块
 
 |OS|program|
-|--|---|
+|---|---|
 |在进程列表中创建入口||
 |为程序分配内存||
 |将程序加载至内存||
@@ -25,9 +25,41 @@ Direct Execution 指**直接在 CPU 上运行程序**，这样能够使得程序
 
 ## Direct Execution 的缺陷（一）
 
-如果程序直接运行在 CPU 上，就可以无限制地操作硬件与 OS，如：访问磁盘进行 I/O 请求，这显然是不可行的。由此引入「用户态」&「内核态」的概念：
+如果程序直接运行在 CPU 上，就可以不受限制地操作硬件与 OS，如：访问磁盘进行 I/O 请求，这显然是不可行的。由此引入「用户态」&「内核态」的概念：
 
 * 首先需要明确的是：**这属于 CPU 的硬件支持**
 * 在用户态下程序无法执行受限的 CPU 指令，只能通过执行「系统调用」来执行
 * 为了执行系统调用，需要先执行 trap 指令来使 OS 从用户态「陷入」内核态；进入内核态后 OS 可以执行受限指令，完成进程的任务后 OS 执行 return-from-trap 返回用户态
 * 内核需要在引导时建立 trap table 以保证用户程序执行 trap 指令后能跳转到对应地址进行 trap 操作
+
+|OS@boot(kernel mode)|Handware|Program(user mode)|
+|---|---|---|
+|初始化 trap table|||
+||记住系统调用处理器的位置||
+
+|OS@run(kernel mode)|Handware|Program(user mode)|
+|---|---|---|
+|在进程列表中创建入口|||
+|为程序分配内存|||
+|设置 user 栈|||
+|将寄存器信息保存至 kernel 栈|||
+|return-from-trap|||
+||将寄存器从 kernel 栈中恢复||
+||切换为 user mode||
+||跳转至 main()||
+|||运行 main()|
+|||执行系统调用|
+|||trap|
+||将寄存器信息保存至 kernel 栈||
+||切换为 kernel mode||
+||跳转至 trap 处理器||
+|处理 trap|||
+|执行系统调用|||
+|return-from-trap|||
+||将寄存器从 kernel 栈中恢复||
+||切换为 user mode||
+||跳转至 trap 前的位置||
+|||return from main()|
+|||trap(via exit())|
+|释放内存|||
+|从进程列表中移除|||
