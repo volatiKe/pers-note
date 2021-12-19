@@ -60,7 +60,7 @@ Java 的泛型属于一种语法糖，目的是在编译期间进行类型检查
 
 首先需要明确的是：正因为泛型信息会在编译后擦除，所以即使 Apple extends Fruit，List\<Fruit> 和 List\<Apple> 之间也不存在任何继承关系，这就需要 PECS 原则提升 API 的灵活性。
 
-#### 2.2.1 PESC 下容器的声明
+#### 2.2.1 PESC 下容器的协变
 
 假设 Child extends T extends Parent：
 
@@ -82,35 +82,43 @@ List<? super Child> testCT2 = new ArrayList<T>();
 
 **擦除的边界**：编译器虽然会擦除类型信息，但会保证类型一致性，所以类型参数会被擦除到一个边界
 
-* `<? extends T>` 界定了最大父类是 T，即实际指向必须是其或子类
-* `<? super T>` 界定了最小子类是 T，即实际指向必须是其或父类
+* `<? extends T>` 界定了最大父类是 T，即此类型容器为 T 或其子类类型容器的父类
+* `<? super T>` 界定了最小子类是 T，即此类型容器为 T 或其父类类型容器的父类
 
 #### 2.2.2 PESC 下容器的读写
 
 假设 Child extends T extends Parent：
 
 ```java
-List<? extends T> extendsT = new ArrayList<>();
-extendsT.add(new Parent());//报错
-extendsT.add(new T());//报错
-extendsT.add(new Child());//报错
-Parent p1 = extendsT.get(0);
-T t1 = extendsT.get(0);
-Child c1 = extendsT.get(0);//报错
+public static void producerExtends(List<? extends T> extendsT) {
+    extendsT.add(new Parent());//报错
+    extendsT.add(new T());//报错
+    extendsT.add(new Child());//报错
+    Parent p = extendsT.get(0);
+    T t = extendsT.get(0);
+    Child c = extendsT.get(0);//报错
+}
 
-List<? super T> superT = new ArrayList<>();
-superT.add(new Parent());//报错
-superT.add(new T());
-superT.add(new Child());
-Parent p2 = superT.get(0);//报错
-T t2 = superT.get(0);//报错
-Child c2 = superT.get(0);//报错
+public static void consumerSuper(List<? super T> superT) {
+    superT.add(new Parent());//报错
+    superT.add(new T());
+    superT.add(new Child());
+    Parent p = superT.get(0);//报错
+    T t = superT.get(0);//报错
+    Child c = superT.get(0);//报错
+}
 ```
 
 * `<? extends T>`
-  * 只可按照 T 或 T 的父类类型读取：因为存入的均为 T 及 T 的子类，按父类读取不会有问题
-  * 不可写入：容器存放的是T及其子类，泛型擦除后编译器
-    ```
+  * get：因为指向的类型为 List\<T>或 List\<T 的子类>，获取元素时按 T 或其父类读取不会有问题
+  * add：不允许 add
+    * add Parent 异常：因为 extendsT 中的元素最高为 T
+    * add T 异常：如果 List\<Child>作为参数传给 producerExtends，T 无法向下转型为 Child
+    * add Child 异常：假设 Child2 extends T，如果 List\<Child2>作为参数传给 producerExtends，向其中写入 Child 显然是不允许的
 
-* `<? super Apple>`
-  * 会将容器声明为只写。因为编译器知道存放的元素是 Apple 或其父类，但不知道具体类型，所以读取时按照 Object 返回一定不会出错，而写入时则不允许加入任何父类，但可以写入 T 或其子类，因为 T 的子类一定可以向上转型为 T
+* `<? super T>`
+  * get：不允许 get
+    * get Parent 异常：假设 Parent extends Parent2，如果 List\<Parent2>作为参数传给 consumerSuper，Parent2 无法向下转型为 Parent
+    * get T 异常：如果如果 List\<Parent>作为参数传给 consumerSuper，Parent 无法向下转型为 T
+    * get Child 异常：因为 superT 中的元素最低为 T
+  * add：因为指向的类型为 List\<T>或 List\<T 的父类>，只有放入 T 或其子类时才不会与实际指向 List 的类型冲突
