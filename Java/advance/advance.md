@@ -13,8 +13,8 @@ RTTI 有两种形式：
 
 获取 Class 对象的方式：
 
-* 对象.getClass()
-* 类.class
+* 对象。getClass()
+* 类。class
 * Class.forName("类名")
 
 以上三种方式获取到的 Class 对象是相同的，即通过「==」比较结果为 true。
@@ -58,10 +58,59 @@ Java 的泛型属于一种语法糖，目的是在编译期间进行类型检查
 
 ### 2.2 PECS 原则
 
-擦除的边界：编译器虽然会擦除类型信息，但会保证类型一致性，所以类型参数会被擦除到一个边界，没有指明的情况下会被擦除到 Object。可以使用 `<T extends F>` 指定擦除边界为 F。
+首先需要明确的是：正因为泛型信息会在编译后擦除，所以即使 Apple extends Fruit，List\<Fruit> 和 List\<Apple> 之间也不存在任何继承关系，这就需要 PECS 原则提升 API 的灵活性。
 
-* **Producer Extends**：如果需要一个只读容器，用来生产 T，那么使用 `<? extends T>`。因为编译器只知道存放的元素是 T 或其子类，但不知道具体类型，所以只能按照 T 类型读取，但是写入操作会有写入非 T 类型的风险，所以禁止写入
-* **Consumer Super**：如果需要一个只写容器，用来消费 T，那么使用 `<? super T>`。因为编译器知道存放的元素是 T 或其父类，但不知道是哪个父类，所以读取时按照 Object 返回一定不会出错，而写入时则不允许加入任何父类，但可以写入 T 或其子类，因为 T 的子类一定可以向上转型为 T
+#### 2.2.1 PESC 下容器的声明
 
-为什么需要 PECS 原则？
-因为即使 T1 和 T2 之间存在继承关系，但 List\<T1> 和 List\<T2> 之间也不存在任何继承关系，所以需要 PECS 原则提升 API 的灵活性。
+假设 Child extends T extends Parent：
+
+```java
+List<? extends Parent> testPT1 = new ArrayList<T>();
+List<? extends Parent> testPC1 = new ArrayList<Child>();
+List<? extends T> testTP1 = new ArrayList<Parent>();//报错
+List<? extends T> testTC1 = new ArrayList<Child>();
+List<? extends Child> testCP1 = new ArrayList<Parent>();//报错
+List<? extends Child> testCT1 = new ArrayList<T>();//报错
+
+List<? super Parent> testPT2 = new ArrayList<T>();//报错
+List<? super Parent> testPC2 = new ArrayList<Child>();//报错
+List<? super T> testTP2 = new ArrayList<Parent>();
+List<? super T> testTC2 = new ArrayList<Child>();//报错
+List<? super Child> testCP2 = new ArrayList<Parent>();
+List<? super Child> testCT2 = new ArrayList<T>();
+```
+
+**擦除的边界**：编译器虽然会擦除类型信息，但会保证类型一致性，所以类型参数会被擦除到一个边界
+
+* `<? extends T>` 界定了最大父类是 T，即实际指向必须是其或子类
+* `<? super T>` 界定了最小子类是 T，即实际指向必须是其或父类
+
+#### 2.2.2 PESC 下容器的读写
+
+假设 Child extends T extends Parent：
+
+```java
+List<? extends T> extendsT = new ArrayList<>();
+extendsT.add(new Parent());//报错
+extendsT.add(new T());//报错
+extendsT.add(new Child());//报错
+Parent p1 = extendsT.get(0);
+T t1 = extendsT.get(0);
+Child c1 = extendsT.get(0);//报错
+
+List<? super T> superT = new ArrayList<>();
+superT.add(new Parent());//报错
+superT.add(new T());
+superT.add(new Child());
+Parent p2 = superT.get(0);//报错
+T t2 = superT.get(0);//报错
+Child c2 = superT.get(0);//报错
+```
+
+* `<? extends T>`
+  * 只可按照 T 或 T 的父类类型读取：因为存入的均为 T 及 T 的子类，按父类读取不会有问题
+  * 不可写入：容器存放的是T及其子类，泛型擦除后编译器
+    ```
+
+* `<? super Apple>`
+  * 会将容器声明为只写。因为编译器知道存放的元素是 Apple 或其父类，但不知道具体类型，所以读取时按照 Object 返回一定不会出错，而写入时则不允许加入任何父类，但可以写入 T 或其子类，因为 T 的子类一定可以向上转型为 T
