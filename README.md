@@ -65,6 +65,7 @@ Java Web
 
 * [spring](Web/spring/spring.md)
 * [分布式](Web/distribution/distribution.md)
+* [分布式锁](Web/distribution/lock.md)
 * [系统设计和中间件](Web/system_design/system_design.md)
 * [场景设计](Web/design/design.md)
 

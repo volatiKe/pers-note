@@ -69,13 +69,9 @@
 
 ## 8. 管理开机启动项
 
-* 增加源
-
-  ```shell
-  deb http://archive.ubuntu.com/ubuntu/ trusty main universe restricted multiverse
-  ```
-
-* 安装 sysv-rc-conf
+```shell
+sudo apt-get install tweaks
+```
 
 ---
 
@@ -291,3 +287,15 @@ settings.xml：
   * 安装 fortune & cowsay
   * 安装 pokemonsay，在 .zpretorc 中将 /root/bin 添加进系统路径
   * 在 .zlogin 中删除默认的 fortune 配置
+
+## 18. 外接显示器
+
+* 禁用自带驱动：/etc/modprobe.d/blacklist.conf
+
+  ```shell
+  blacklist nouveau
+  options nouveau modeset=0
+  ```
+
+* apt-get 安装 nvidia 驱动
+* nvidia x server settings -> prime profiles -> performance mode
