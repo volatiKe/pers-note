@@ -9,7 +9,7 @@
 
 ## Direct Execution
 
-Direct Execution 指**直接在 CPU 上运行程序**，这样能够使得程序运行的尽可能块
+Direct Execution 指**直接在 CPU 上运行程序**，这样能够使得程序运行得尽可能快
 
 |OS|program|
 |---|---|

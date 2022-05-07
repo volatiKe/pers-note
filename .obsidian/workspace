@@ -1,0 +1,138 @@
+{
+  "main": {
+    "id": "5fa247930169a3c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b2a54695bd55283",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "OS/ostep/virtualization/process.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c87f4d3a25d5272e",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c993f0eab604fb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67dd981fc3075972",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "ba830c85cb50b926",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "e54cca2b1a4710d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "ccae3721b5e0b4dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a870261410b2a74",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "OS/ostep/virtualization/process.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "49d59b676895bb57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4cb8d4176b15c5e5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "OS/ostep/virtualization/process.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "db7c054552e9bbec",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "OS/ostep/virtualization/process.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "2b2a54695bd55283",
+  "lastOpenFiles": [
+    "OS/ostep/virtualization/process.md",
+    "OS/ostep/virtualization/scheduling.md",
+    "OS/ostep/virtualization/multi-level feedback queue.md",
+    "OS/ostep/virtualization/limited direct execution.md",
+    "README.md",
+    "GTD/2022-undone/undone.md",
+    "GTD/2022-daily/2022-05-07.md",
+    "GTD/2022-todo/todo.md",
+    "GTD/2022-daily/2022-05-06.md",
+    "GTD/2022-daily/2022-05-05.md"
+  ]
+}
