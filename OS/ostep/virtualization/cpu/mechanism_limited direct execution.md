@@ -1,4 +1,4 @@
-# Limited Direct Execution
+# Mechanism : Limited Direct Execution
 
 为了虚拟化 CPU，OS 需要在许多看起来同时运行的进程间共享物理 CPU 资源，这就引入了两个问题：
 

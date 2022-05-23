@@ -23,7 +23,7 @@
 * [死锁](OS/deadlock/deadlock.md)
 * OSTEP
   * 虚拟化
-    * [进程](OS/ostep/virtualization/process.md)
+    * [进程](OS/ostep/virtualization/cpu/abstraction_process.md)
   * [磁盘驱动器](OS/ostep/hard_disk_drive/hard_disk_drive.md)
   * [内存分页](OS/ostep/paging/paging.md)
 
