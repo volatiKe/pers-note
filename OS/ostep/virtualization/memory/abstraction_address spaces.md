@@ -1,7 +1,5 @@
 # Abstraction : Address Spaces
 
-
-
 ## 早期系统
 
 OS 和用户程序各占用一部分内存，并没有地址空间的抽象

@@ -190,26 +190,12 @@ public void test2(){
 
 ## 5. Spring Bean
 
-### 5.1 构造器注入
+### 5.1 依赖注入
 
-* 可以保证注入的依赖不可变
+```
+The Spring team generally advocates constructor injection as it enables one to implement application components as _immutable objects_ and to ensure that required dependencies are not `null`. Furthermore constructor-injected components are always returned to client (calling) code in a fully initialized state. As a side note, a large number of constructor arguments is a _bad code smell_, implying that the class likely has too many responsibilities and should be refactored to better address proper separation of concerns.
+```
 
-    ```java
-    public class A(){
-
-        private final B b;
-
-        public A(B b){
-            this.b = b;
-        }
-    }
-    ```
-
-* 可以保证注入的依赖不为 null
-  * 由于实现了有参构造，所以不会调用默认构造函数，需要 Spring 容器传入所需要的参数
-  * 有该类型的参数则传入
-  * 无该类型的参数则报错
-  * 保证传入的不是 null
-  * field 注入允许实例化时依赖的对象为空，导致 NPE 无法尽早暴露
-* 完全初始化的状态
-  * 向构造器传参之前，要确保注入的内容不为空，那么必然会调用依赖组件的构造方法完成实例化。而在 Java 类加载实例化的过程中，构造方法是最后一步，所以注入的对象都是初始化之后的状态·
+* 依赖不可变：可使用 final 修饰
+* 依赖不为空：有参构造代替了无参构造，spring 在初始化 bean 时就会使用我们自行定义的有参构造，传入的参数不会为 null
+* 完全初始化的状态：向构造方法传参之前，必然需要初始化入参，spring 会通过入参的构造方法（如果我们定义了的话）初始化它，由于构造方法是类实例化的最后一步，那么传给构造方法参数的变量必定是初始化完毕的
