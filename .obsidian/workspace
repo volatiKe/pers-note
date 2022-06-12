@@ -4,11 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "cda8a0be220f6bf8",
+        "id": "12e84eb21fa8439b",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
+            "mode": "source",
+            "backlinks": false,
+            "source": false
+          }
         }
       }
     ],
@@ -49,7 +54,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 426.5
+    "width": 426.5,
+    "collapsed": true
   },
   "right": {
     "id": "e54cca2b1a4710d6",
@@ -65,6 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -92,6 +99,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -102,28 +110,57 @@
             "type": "leaf",
             "state": {
               "type": "outline",
+              "state": {
+                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md"
+              }
+            }
+          },
+          {
+            "id": "6497d55a24dde659",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
               "state": {}
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
+      },
+      {
+        "id": "e9da477ccbd30d11",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a5d19f07e005f37",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 424.5,
     "collapsed": true
   },
-  "active": "cda8a0be220f6bf8",
+  "active": "12e84eb21fa8439b",
   "lastOpenFiles": [
-    "Web/spring/spring.md",
     "OS/ostep/virtualization/memory/mechanism_address translation.md",
-    "OS/ostep/virtualization/cpu/abstraction_process.md",
+    "OS/ostep/virtualization/memory/summary_hardware support.md",
     "OS/ostep/virtualization/memory/abstraction_address spaces.md",
+    "Web/spring/spring.md",
+    "OS/ostep/virtualization/cpu/abstraction_process.md",
     "OS/ostep/virtualization/cpu/mechanism_limited direct execution.md",
     "Pattern/single/single.md",
     "OS/ostep/virtualization/cpu/policy_scheduling.md",
     "OS/ostep/virtualization/cpu/policy_multi-level feedback queue.md",
-    "多道程序 & 时分共享.md",
-    "README.md"
+    "多道程序 & 时分共享.md"
   ]
 }
