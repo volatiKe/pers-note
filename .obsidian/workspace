@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
+            "file": "OS/ostep/virtualization/memory/segmentation.md",
             "mode": "source",
             "backlinks": false,
             "source": false
@@ -71,7 +71,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
+                "file": "OS/ostep/virtualization/memory/segmentation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -99,7 +99,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md",
+                "file": "OS/ostep/virtualization/memory/segmentation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -111,7 +111,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OS/ostep/virtualization/memory/mechanism_address translation.md"
+                "file": "OS/ostep/virtualization/memory/segmentation.md"
               }
             }
           },
@@ -152,15 +152,15 @@
   },
   "active": "12e84eb21fa8439b",
   "lastOpenFiles": [
+    "OS/ostep/virtualization/memory/segmentation.md",
     "OS/ostep/virtualization/memory/mechanism_address translation.md",
+    "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png",
     "OS/ostep/virtualization/memory/summary_hardware support.md",
     "OS/ostep/virtualization/memory/abstraction_address spaces.md",
     "Web/spring/spring.md",
     "OS/ostep/virtualization/cpu/abstraction_process.md",
     "OS/ostep/virtualization/cpu/mechanism_limited direct execution.md",
     "Pattern/single/single.md",
-    "OS/ostep/virtualization/cpu/policy_scheduling.md",
-    "OS/ostep/virtualization/cpu/policy_multi-level feedback queue.md",
-    "多道程序 & 时分共享.md"
+    "OS/ostep/virtualization/cpu/policy_scheduling.md"
   ]
 }
