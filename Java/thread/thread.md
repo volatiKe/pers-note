@@ -248,8 +248,20 @@ public T get() {
 
 ### 4.2 内存泄漏
 
-ThreadLocalMap 是一个 Entry 数组，Entry 使用 ThreadLocal 作为 key，并且 Entry 存在指向 ThreadLocal 的弱引用，如图中的虚线：
+ThreadLocalMap 是一个 Entry 数组，Entry 使用 ThreadLocal 作为 key，并且 Entry 存在指向 ThreadLocal 的弱引用
 
+```java
+static class Entry extends WeakReference<ThreadLocal<?>> {  
+    /** The value associated with this ThreadLocal. */  
+    Object value;  
+  
+    Entry(ThreadLocal<?> k, Object v) {  
+        super(k);  
+        value = v;  
+    }  
+}
+```
+如图中的虚线：
 ![threadlocal ref](img/threadlocal.png)
 
 **为什么 Entry 指向 ThreadLocal 的引用被设计为弱引用**：
@@ -263,4 +275,4 @@ ThreadLocalMap 是一个 Entry 数组，Entry 使用 ThreadLocal 作为 key，�
 
 **避免内存泄漏**：
 
-* 手动调用 ThreadLocal 的 remove()，将 key 和 value 都置为 null，从而消除指向对象的强引用
+* 手动调用 ThreadLocal 的 remove()

@@ -2,5 +2,6 @@
   "theme": "obsidian",
   "baseFontSize": 16,
   "baseFontSizeAction": false,
-  "cssTheme": "Things"
+  "cssTheme": "",
+  "accentColor": ""
 }
