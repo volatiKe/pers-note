@@ -1,0 +1,189 @@
+{
+  "main": {
+    "id": "5fa247930169a3c9",
+    "type": "split",
+    "children": [
+      {
+        "id": "65d897c40af81881",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "eae6ade2dcc19ffa",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c87f4d3a25d5272e",
+    "type": "split",
+    "children": [
+      {
+        "id": "9c993f0eab604fb7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "67dd981fc3075972",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ba830c85cb50b926",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "6bf95ea2d5227064",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 247.5
+  },
+  "right": {
+    "id": "e54cca2b1a4710d6",
+    "type": "split",
+    "children": [
+      {
+        "id": "ccae3721b5e0b4dc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0a870261410b2a74",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": true,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "49d59b676895bb57",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4cb8d4176b15c5e5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "db7c054552e9bbec",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {}
+            }
+          },
+          {
+            "id": "6497d55a24dde659",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 346.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "command-palette:打开命令面板": false,
+      "workspaces:管理工作区布局": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "eae6ade2dcc19ffa",
+  "lastOpenFiles": [
+    "读书笔记/MySQL/note/索引 & 查询方式.md",
+    "读书笔记/MySQL/note/数据存储方式.md",
+    "读书笔记/MySQL/pic/数据存储方式_1.png",
+    "读书笔记/MySQL/note",
+    "INDEX/MySQL.md",
+    "存储｜../读书笔记/MySQL/数据存储格式.md",
+    "存储｜../读书笔记/MySQL",
+    "存储｜../读书笔记",
+    "存储｜..",
+    "INDEX.md",
+    "INDEX",
+    "未命名.md",
+    "OS/ostep/virtualization/memory/mechanism_address translation.md",
+    "OS/ostep/virtualization/memory/segmentation.md",
+    "OS/ostep/virtualization/cpu/policy_scheduling.md",
+    "OS/ostep/virtualization/cpu/policy_multi-level feedback queue.md",
+    "OS/ostep/virtualization/cpu/mechanism_limited direct execution.md",
+    "OS/ostep/virtualization/cpu/abstraction_process.md",
+    "OS/ostep/virtualization/memory/img/address translation/Snipaste_2022-06-12_11-29-52.png",
+    "读书笔记/OSTEP.md",
+    "读书笔记/MySQL",
+    "读书笔记",
+    "Pasted image 20231014145334.png",
+    "Pasted image 20231014145113.png",
+    "Database/未命名.md",
+    "读书笔记/MySQL/pic",
+    "Env/config/config_hugo.md",
+    "Java/thread/thread.md",
+    "Java/gc/gc.md",
+    "Java/class_and_instance/class_and_instance.md",
+    "Java/advance/advance.md",
+    "Java/jvm_base/jvm_base.md",
+    "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png",
+    "OS/ostep/virtualization/memory/summary_hardware support.md",
+    "OS/ostep/virtualization/memory/abstraction_address spaces.md"
+  ]
+}
