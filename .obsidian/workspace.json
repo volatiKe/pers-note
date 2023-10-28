@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "65d897c40af81881",
+        "id": "6c62028b24c21536",
         "type": "tabs",
         "children": [
           {
-            "id": "eae6ade2dcc19ffa",
+            "id": "3edb1324ff9b1b83",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "INDEX.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -65,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 247.5
+    "width": 221.5
   },
   "right": {
     "id": "e54cca2b1a4710d6",
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "INDEX.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -108,6 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "INDEX.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -118,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "INDEX.md"
+              }
             }
           },
           {
@@ -130,11 +139,11 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 346.5
+    "width": 242.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -144,17 +153,20 @@
       "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false,
       "workspaces:管理工作区布局": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "eae6ade2dcc19ffa",
+  "active": "67dd981fc3075972",
   "lastOpenFiles": [
-    "读书笔记/MySQL/note/索引 & 查询方式.md",
-    "读书笔记/MySQL/note/数据存储方式.md",
+    "INDEX/MySQL.md",
+    "读书笔记/MySQL/note/日志.md",
+    "读书笔记/MySQL/note/加锁机制.md",
+    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/并发.md",
+    "读书笔记/MySQL/note/数据存储.md",
     "读书笔记/MySQL/pic/数据存储方式_1.png",
     "读书笔记/MySQL/note",
-    "INDEX/MySQL.md",
     "存储｜../读书笔记/MySQL/数据存储格式.md",
     "存储｜../读书笔记/MySQL",
     "存储｜../读书笔记",
