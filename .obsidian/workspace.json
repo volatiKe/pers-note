@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "cdcfa5948b087032",
+        "id": "369d8139c254476c",
         "type": "tabs",
         "children": [
           {
-            "id": "b6a30fcbc5151217",
+            "id": "4edc34732cb2d34d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "OS/异常 & 中断.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "OS/异常 & 中断.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "OS/异常 & 中断.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "OS/异常 & 中断.md"
+                "file": "读书笔记/MySQL/note/日志.md"
               }
             }
           },
@@ -157,7 +157,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 215.5
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,23 +171,29 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "67dd981fc3075972",
+  "active": "4edc34732cb2d34d",
   "lastOpenFiles": [
-    "OS/文件系统.md",
+    "读书笔记/MySQL/note/数据存储.md",
+    "读书笔记/MySQL/note/并发.md",
+    "读书笔记/MySQL/note/加锁机制.md",
+    "读书笔记/MySQL/note/查询.md",
     "OS/异常 & 中断.md",
     "OS/内存管理.md",
-    "OS/io/image/io_big_file_transfer.webp",
-    "OS/io/image/io_file_transfer_SG-DMA.webp",
-    "OS/io/image/io_file_transfer_sendfile.webp",
-    "OS/io/image/io_file_transfer_mmap+write.webp",
-    "OS/io/image/io_file_transfer_read+write.webp",
-    "OS/io/image/io_with dma.webp",
-    "OS/io/image/io_without dma.webp",
-    "OS/io/image/io_compare.jpg",
-    "OS/io/image/io_3.jpg",
-    "OS/io/image/io_model.jpg",
-    "读书笔记/MySQL/note/加锁机制.md",
-    "读书笔记/MySQL/note/并发.md",
+    "OS/文件系统.md",
+    "OS/deadlock/deadlock.md",
+    "OS/网络 IO.md",
+    "OS/image/非阻塞 IO-多路复用.jpg",
+    "OS/image/io_file_transfer_read+write.webp",
+    "OS/image/异步 IO.jpg",
+    "OS/image/非阻塞 IO.jpg",
+    "OS/image/阻塞 IO.jpg",
+    "OS/image/io_without dma.webp",
+    "OS/image/io_with dma.webp",
+    "OS/image/IO2.webp",
+    "OS/image/io_big_file_transfer.webp",
+    "OS/image/io_file_transfer_mmap+write.webp",
+    "image/io_model.jpg.md",
+    "image",
     "读书笔记/MySQL/note/日志.md",
     "Java/thread/thread.md",
     "Java/gc/gc.md",

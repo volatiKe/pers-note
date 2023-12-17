@@ -15,7 +15,7 @@
 
 操作系统
 
-* [IO 模型](OS/io/io.md)
+* [IO 模型](OS/网络%20IO.md)
 * [死锁](OS/deadlock/deadlock.md)
 * OSTEP
   * 虚拟化
