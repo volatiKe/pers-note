@@ -4,16 +4,29 @@
     "type": "split",
     "children": [
       {
-        "id": "369d8139c254476c",
+        "id": "a3480256e732185f",
         "type": "tabs",
         "children": [
+          {
+            "id": "de02a2d2c6153cd2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "OS/内存管理.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          },
           {
             "id": "4edc34732cb2d34d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "读书笔记/MySQL/note/日志.md",
+                "file": "Database/concurrency/concurrency.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -70,7 +83,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 288.5
+    "width": 224.5
   },
   "right": {
     "id": "e54cca2b1a4710d6",
@@ -86,7 +99,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读书笔记/MySQL/note/日志.md",
+                "file": "OS/内存管理.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "读书笔记/MySQL/note/日志.md",
+                "file": "OS/内存管理.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +139,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "读书笔记/MySQL/note/日志.md"
+                "file": "OS/内存管理.md"
               }
             }
           },
@@ -171,12 +184,16 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "4edc34732cb2d34d",
+  "active": "de02a2d2c6153cd2",
   "lastOpenFiles": [
-    "读书笔记/MySQL/note/数据存储.md",
+    "Java/grammer/grammer.md",
+    "Database/concurrency/concurrency.md",
+    "读书笔记/MySQL/note/日志.md",
+    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/锁定读加锁机制.md",
     "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/加锁机制.md",
-    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/数据存储.md",
     "OS/异常 & 中断.md",
     "OS/内存管理.md",
     "OS/文件系统.md",
@@ -194,7 +211,6 @@
     "OS/image/io_file_transfer_mmap+write.webp",
     "image/io_model.jpg.md",
     "image",
-    "读书笔记/MySQL/note/日志.md",
     "Java/thread/thread.md",
     "Java/gc/gc.md",
     "Java/class_and_instance/class_and_instance.md",
