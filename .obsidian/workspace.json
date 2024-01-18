@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "373dd92d767a86c9",
+        "id": "11595757dc753b22",
         "type": "tabs",
         "children": [
           {
-            "id": "6eb8f3ab9ad7ffc8",
+            "id": "ad06983d536633ee",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/宜信.md",
+                "file": "interview/领岳科技.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "interview/领岳科技.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "interview/领岳科技.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "interview/领岳科技.md"
+              }
             }
           },
           {
@@ -167,25 +171,31 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "7a5d19f07e005f37",
+  "active": "ad06983d536633ee",
   "lastOpenFiles": [
+    "interview/老虎国际.md",
+    "interview/领岳科技.md",
+    "interview/tips.md",
+    "读书笔记/MySQL/note/并发.md",
+    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/日志.md",
+    "读书笔记/MySQL/note/数据存储.md",
+    "interview/易宝支付.md",
+    "Java/collection/collection.md",
+    "Java/common_class/common_class.md",
+    "Java/grammer/grammer.md",
     "interview/宜信.md",
     "interview/AppLoving.md",
+    "OS/网络 IO.md",
     "OS/文件系统.md",
     "Web/design/design.md",
     "interview",
     "Database/concurrency/concurrency.md",
     "OS/内存管理.md",
-    "Java/grammer/grammer.md",
-    "读书笔记/MySQL/note/日志.md",
-    "读书笔记/MySQL/note/查询.md",
     "读书笔记/MySQL/note/锁定读加锁机制.md",
-    "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/加锁机制.md",
-    "读书笔记/MySQL/note/数据存储.md",
     "OS/异常 & 中断.md",
     "OS/deadlock/deadlock.md",
-    "OS/网络 IO.md",
     "OS/image/非阻塞 IO-多路复用.jpg",
     "OS/image/io_file_transfer_read+write.webp",
     "OS/image/异步 IO.jpg",
@@ -200,12 +210,6 @@
     "image",
     "Java/thread/thread.md",
     "Java/gc/gc.md",
-    "Java/class_and_instance/class_and_instance.md",
-    "Java/advance/advance.md",
-    "Java/jvm_base/jvm_base.md",
-    "OS/ostep/virtualization/memory/segmentation.md",
-    "OS/ostep/virtualization/memory/mechanism_address translation.md",
-    "OS/ostep/virtualization/memory/summary_hardware support.md",
-    "OS/ostep/virtualization/memory/abstraction_address spaces.md"
+    "Java/class_and_instance/class_and_instance.md"
   ]
 }
