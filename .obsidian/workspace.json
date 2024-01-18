@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/宜信.md",
+                "file": "Web/distribution/distribution.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Web/distribution/distribution.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,6 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Web/distribution/distribution.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +125,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Web/distribution/distribution.md"
+              }
             }
           },
           {
@@ -167,25 +171,34 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "7a5d19f07e005f37",
+  "active": "6eb8f3ab9ad7ffc8",
   "lastOpenFiles": [
+    "读书笔记/MySQL/note/并发.md",
+    "读书笔记/MySQL/note/查询.md",
+    "OS/文件系统.md",
+    "OS/网络 IO.md",
+    "Network/transport/transport.md",
+    "Pattern/single/single.md",
+    "interview/白龙马.md",
+    "interview/乐信.md",
+    "DataStructure/search/search.md",
+    "DataStructure/sort/sort.md",
+    "Database/index/index.md",
     "interview/宜信.md",
     "interview/AppLoving.md",
-    "OS/文件系统.md",
+    "Web/distribution/lock.md",
+    "Web/spring/spring.md",
     "Web/design/design.md",
     "interview",
     "Database/concurrency/concurrency.md",
     "OS/内存管理.md",
     "Java/grammer/grammer.md",
     "读书笔记/MySQL/note/日志.md",
-    "读书笔记/MySQL/note/查询.md",
     "读书笔记/MySQL/note/锁定读加锁机制.md",
-    "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/加锁机制.md",
     "读书笔记/MySQL/note/数据存储.md",
     "OS/异常 & 中断.md",
     "OS/deadlock/deadlock.md",
-    "OS/网络 IO.md",
     "OS/image/非阻塞 IO-多路复用.jpg",
     "OS/image/io_file_transfer_read+write.webp",
     "OS/image/异步 IO.jpg",
@@ -197,15 +210,6 @@
     "OS/image/io_big_file_transfer.webp",
     "OS/image/io_file_transfer_mmap+write.webp",
     "image/io_model.jpg.md",
-    "image",
-    "Java/thread/thread.md",
-    "Java/gc/gc.md",
-    "Java/class_and_instance/class_and_instance.md",
-    "Java/advance/advance.md",
-    "Java/jvm_base/jvm_base.md",
-    "OS/ostep/virtualization/memory/segmentation.md",
-    "OS/ostep/virtualization/memory/mechanism_address translation.md",
-    "OS/ostep/virtualization/memory/summary_hardware support.md",
-    "OS/ostep/virtualization/memory/abstraction_address spaces.md"
+    "image"
   ]
 }
