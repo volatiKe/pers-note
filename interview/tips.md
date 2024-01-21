@@ -77,3 +77,60 @@
 * 独立负责单一领域核心服务的重构全流程，梳理掌握理财清结算全业务
 * 重构里程碑多，需要协调、考虑各方资源
 * 对资金服务的各种变更需要有完整、规范的流程来避免问题发生
+
+技术点
+* 反射解析文件
+	* 具体的文件解析器持有文件行 model 的泛型类
+	* 泛型类的构造方法入参是文件行 String
+	* 父类逐行读取文件内容后直接通过 class.newInstance 构建文件 model 实体类
+	* 整个循环读一行处理一行
+	* 统计行数和金额 & 读取过程中如果有与配置相同的结束符则放入 TL
+	* 行数、金额、结束符 check 不过则抛异常
+* 线程池监控
+	* 线程池放入 map
+	* Spring 定时任务根据 cron 的配置从 map 中拿出线程池打印参数到单独的日志
+	* 运维平台配置规则解析日志，统计参数
+*  线程池动态调参
+	* 线程池放入 map
+	* apollo 配置中心支持服务监听配置修改事件
+	* 监听到线程池参数配置修改后从 map 中获取对应线程池并设置新的参数
+* Spring 消息机制解耦一清二清
+	* 一清结果请求下游前触发二清
+	* 根据数据业务类型从业务工厂拿到 event
+	* publish event
+	* @EventListener 监听事件
+	* 监听事件构建数据落库前方法加锁做幂等判断防止一清结果请求下游失败
+* 迭代聚合
+	* 文件需要根据 db 中某日所有数据按多维度聚合出 n 条数据
+	* 每页捞 500 条聚合一条中间数据
+	* 下一页捞出 500 条再聚合成一条中间数据
+	* 中间数据再次聚合，最大程度减少内存中数据占用
+* 树形结构多维度拦截器
+	* 配置为 json 格式，operator & left & right，可以多层嵌套
+		* {operator: and, left:{userId:xxx},right:{operator:or,left:xxx,right:{orderNo:xxx}}}
+	* 有生效开关配置，必须在开关 ON 时才启用，开关实时读取配置
+	* 配置的 key 拼入批次号，第一次构建拦截树后以批次号存入本地缓存
+		* curl 接口清除缓存
+	* 构建
+		* 有 operator key，则递归调用构建方法获取 left 和 right key 构建左右节点，节点类型为 OperatorNode 并返回
+		* 否则构建 ConditionNode，存放各种维度数据的 Set，配置中的白名单数据直接读进 Set 中
+		* 判断时调用两个节点的公共方法 getResult
+			* ConditonNode 的此方法是根据数据字段是否在对应 Set 中
+			* OperatorNode 的此方法是 left.getResult && right.getResult 或者 left.getResult || right.getResult
+* redis 线程可重入锁
+	* 加锁
+		* 从 TL 中取出 map，根据 key 获取次数
+		* 如果次数是 0
+			* setNx 放入 key & value & 过期时间
+			* 加锁成功次数 +1，返回 true
+			* 加锁 map 中删掉此 kv，并返回 false，业务抛异常
+		* 如果次数不是 0
+			* 次数 + 1，返回 true
+	* 解锁
+		* 从 TL 中取出 map，根据 key 获取次数
+		* 次数为 1
+			* 删掉 redis 的 key
+			* redis 操作成功则删掉 map 的 kv，返回 true
+			* 否则返回 false，，业务抛异常
+		* 次数大于 1
+			* 次数 -1，返回 true
