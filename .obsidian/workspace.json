@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "373dd92d767a86c9",
+        "id": "7d65c3ec170cdd33",
         "type": "tabs",
         "children": [
           {
-            "id": "6eb8f3ab9ad7ffc8",
+            "id": "12e84eb21fa8439b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Web/distribution/distribution.md",
+                "file": "interview/tips.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -59,7 +59,7 @@
             }
           },
           {
-            "id": "a2ed4fc3df385625",
+            "id": "8940504db86834d9",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 224.5
+    "width": 313.5
   },
   "right": {
     "id": "e54cca2b1a4710d6",
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Web/distribution/distribution.md",
+                "file": "interview/tips.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Web/distribution/distribution.md",
+                "file": "interview/tips.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Web/distribution/distribution.md"
+                "file": "interview/tips.md"
               }
             }
           },
@@ -139,7 +139,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       },
       {
         "id": "e9da477ccbd30d11",
@@ -157,7 +157,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 424.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -171,45 +172,34 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "6eb8f3ab9ad7ffc8",
+  "active": "12e84eb21fa8439b",
   "lastOpenFiles": [
-    "读书笔记/MySQL/note/并发.md",
-    "读书笔记/MySQL/note/查询.md",
+    "interview/AppLoving.md",
+    "interview/tips.md",
+    "Database/redis/redis.md",
+    "interview/易宝支付.md",
+    "interview/宜信.md",
     "OS/文件系统.md",
     "OS/网络 IO.md",
-    "Network/transport/transport.md",
-    "Pattern/single/single.md",
-    "interview/白龙马.md",
-    "interview/乐信.md",
-    "DataStructure/search/search.md",
-    "DataStructure/sort/sort.md",
-    "Database/index/index.md",
-    "interview/宜信.md",
-    "interview/AppLoving.md",
+    "Java/gc/gc.md",
+    "Java/jvm_base/jvm_base.md",
     "Web/distribution/lock.md",
-    "Web/spring/spring.md",
-    "Web/design/design.md",
-    "interview",
-    "Database/concurrency/concurrency.md",
-    "OS/内存管理.md",
-    "Java/grammer/grammer.md",
-    "读书笔记/MySQL/note/日志.md",
-    "读书笔记/MySQL/note/锁定读加锁机制.md",
-    "读书笔记/MySQL/note/加锁机制.md",
-    "读书笔记/MySQL/note/数据存储.md",
+    "interview/领岳科技.md",
+    "Web/system_design/system_design.md",
+    "Web/distribution/distribution.md",
+    "Java/collection/collection.md",
+    "读书笔记/MySQL/note/查询.md",
+    "interview/乐信.md",
+    "interview/老虎国际.md",
+    "interview/白龙马.md",
     "OS/异常 & 中断.md",
-    "OS/deadlock/deadlock.md",
-    "OS/image/非阻塞 IO-多路复用.jpg",
-    "OS/image/io_file_transfer_read+write.webp",
-    "OS/image/异步 IO.jpg",
-    "OS/image/非阻塞 IO.jpg",
-    "OS/image/阻塞 IO.jpg",
-    "OS/image/io_without dma.webp",
-    "OS/image/io_with dma.webp",
-    "OS/image/IO2.webp",
-    "OS/image/io_big_file_transfer.webp",
-    "OS/image/io_file_transfer_mmap+write.webp",
-    "image/io_model.jpg.md",
-    "image"
+    "Java/grammer/grammer.md",
+    "Java/thread/thread.md",
+    "Java/class_and_instance/class_and_instance.md",
+    "Java/advance/advance.md",
+    "OS/ostep/virtualization/memory/segmentation.md",
+    "OS/ostep/virtualization/memory/mechanism_address translation.md",
+    "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png",
+    "OS/ostep/virtualization/memory/summary_hardware support.md"
   ]
 }
