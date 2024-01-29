@@ -20,6 +20,28 @@
 * 重新确定领域边界
 * 便于后期承载更多清结算业务逻辑
 
+重构做了哪些事
+* 功能的平迁
+* 确认领域职责，迁出领域外逻辑，抽象清结算流程的模型
+* 切流
+
+遇到的问题、bug
+* 支付中台：
+* 清结算：
+	* 切流时，资金流数据要和信息流一致
+		* 只对信息流打标
+			* 资金先到但没打标：信息流不切
+			* 资金流没有到则对信息流打标
+		* 资金流处理
+			* 查信息流是否打标
+			* 查不到信息流（资金流先到）则不打标
+
+资金流先到的场景：
+* 5002 带回来了用户赎回
+* 用户赎回到余额盈
+* 上午触发了结算但转购的信息流还没跑
+
+
 功能
 * 清算：三要素
 * 结算：资金位置的感知、推进、触发划拨
@@ -126,3 +148,64 @@
 			* 否则返回 false，，业务抛异常
 		* 次数大于 1
 			* 次数 -1，返回 true
+
+一些问题
+* 余额 500 分
+	* binlog
+	* 事务
+	* [3、资产互转表500分未清零问题排查（RR隔离级别下的脏读） (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/7Gz5kQ4LYp/shCpvgbC8sjRtG)
+* 引入 fifa 导致流程引擎不开启
+	* springboot 启动
+	* [20220601-引入 fifa 导致流程不开启 (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/Zc41lh8kjF/ZFw3eReyp9mlm1)
+* 慢查
+```
+explain  
+select *  
+from pay_settle.sales_settle_detail  
+where report_date = '20240116'  
+  and direction = 1  
+  and clear_ta_code = '01'  
+  and order_no > ''
+order by serial_no  
+limit 10;
+```
+
+| | |
+| :- | :- |
+| **id** | 1 |
+| **select\_type** | SIMPLE |
+| **table** | sales\_settle\_detail |
+| **partitions** | null |
+| **type** | ref |
+| **possible\_keys** | idx\_report\_date\_direction\_ta,idx\_report\_date\_direction\_fund |
+| **key** | idx\_report\_date\_direction\_ta |
+| **key\_len** | 133 |
+| **ref** | const,const,const |
+| **rows** | 1 |
+| **filtered** | 100 |
+| **Extra** | Using index condition; Using where; Using filesort |
+```
+explain  
+select min(serial_no)  
+from pay_settle.sales_settle_detail  
+where report_date = '20240116'  
+  and direction = 1  
+  and clear_ta_code = '01';
+```
+| | |
+| :- | :- |
+| **id** | 1 |
+| **select\_type** | SIMPLE |
+| **table** | sales\_settle\_detail |
+| **partitions** | null |
+| **type** | ref |
+| **possible\_keys** | idx\_report\_date\_direction\_ta,idx\_report\_date\_direction\_fund |
+| **key** | idx\_report\_date\_direction\_ta |
+| **key\_len** | 133 |
+| **ref** | const,const,const |
+| **rows** | 1 |
+| **filtered** | 100 |
+| **Extra** | null |
+猜测是找最小值是回表后维护小顶堆即可
+但是 order by limit 一定会走 filesort（内存或磁盘排序）
+加了 order_no 有索引，其实差不多，但是最坏情况（数据量很大时）肯定堆排序更快
