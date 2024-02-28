@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/老虎国际.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/老虎国际.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/老虎国际.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/老虎国际.md"
+                "file": "读书笔记/MySQL/note/日志.md"
               }
             }
           },
@@ -137,9 +137,21 @@
               "type": "advanced-tables-toolbar",
               "state": {}
             }
+          },
+          {
+            "id": "b7c26b24883363e1",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              }
+            }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "e9da477ccbd30d11",
@@ -157,49 +169,49 @@
       }
     ],
     "direction": "horizontal",
-    "width": 424.5,
+    "width": 287.5,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "templater-obsidian:Templater": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false
+      "workspaces:管理工作区布局": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
   "active": "a81e92522dce3731",
   "lastOpenFiles": [
+    "读书笔记/MySQL/note/数据存储.md",
+    "读书笔记/MySQL/note/锁定读加锁机制.md",
+    "读书笔记/MySQL/note/日志.md",
+    "读书笔记/MySQL/note/并发.md",
+    "读书笔记/MySQL/note/查询.md",
+    "interview/tips.md",
+    "interview/AppLoving.md",
+    "interview/易宝支付.md",
+    "interview/宜信.md",
+    "interview/领岳科技.md",
+    "interview/乐信.md",
+    "interview/老虎国际.md",
+    "interview/白龙马.md",
     "Web/distribution/distribution.md",
     "Web/distribution/lock.md",
     "Web/system_design/system_design.md",
     "Web/spring/spring.md",
     "Web/design/design.md",
-    "interview/老虎国际.md",
-    "interview/tips.md",
-    "interview/领岳科技.md",
-    "读书笔记/MySQL/note/并发.md",
     "DataStructure/bigdata/bigdata.md",
-    "interview/AppLoving.md",
     "Database/redis/redis.md",
-    "读书笔记/MySQL/note/数据存储.md",
-    "读书笔记/MySQL/note/锁定读加锁机制.md",
-    "读书笔记/MySQL/note/查询.md",
-    "interview/易宝支付.md",
-    "interview/宜信.md",
     "OS/文件系统.md",
     "OS/网络 IO.md",
     "Java/gc/gc.md",
     "Java/jvm_base/jvm_base.md",
     "Java/collection/collection.md",
-    "interview/乐信.md",
-    "interview/白龙马.md",
     "OS/异常 & 中断.md",
-    "Java/grammer/grammer.md",
     "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png"
   ]
 }
