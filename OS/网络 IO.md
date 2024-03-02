@@ -27,7 +27,7 @@ while(1) {
 ```
 while(1) {
   connfd = accept(listenfd);  // 阻塞建立连接
-  pthread_create（doWork);  // 创建一个新的线程
+  pthread_create(doWork);  // 创建一个新的线程
 }
 
 void doWork() {
