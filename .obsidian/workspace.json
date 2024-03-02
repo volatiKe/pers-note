@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/tips.md",
+                "file": "interview/领岳科技.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/tips.md",
+                "file": "interview/领岳科技.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/tips.md",
+                "file": "interview/领岳科技.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/tips.md"
+                "file": "interview/领岳科技.md"
               }
             }
           },
@@ -174,8 +174,18 @@
   },
   "active": "12e84eb21fa8439b",
   "lastOpenFiles": [
-    "interview/AppLoving.md",
     "interview/tips.md",
+    "interview/抖音开放平台.md",
+    "读书笔记/MySQL/note/日志.md",
+    "interview/老虎国际.md",
+    "interview/乐信.md",
+    "interview/领岳科技.md",
+    "interview/白龙马.md",
+    "读书笔记/MySQL/note/并发.md",
+    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/数据存储.md",
+    "读书笔记/MySQL/note/锁定读加锁机制.md",
+    "interview/AppLoving.md",
     "Database/redis/redis.md",
     "interview/易宝支付.md",
     "interview/宜信.md",
@@ -184,22 +194,12 @@
     "Java/gc/gc.md",
     "Java/jvm_base/jvm_base.md",
     "Web/distribution/lock.md",
-    "interview/领岳科技.md",
     "Web/system_design/system_design.md",
     "Web/distribution/distribution.md",
     "Java/collection/collection.md",
-    "读书笔记/MySQL/note/查询.md",
-    "interview/乐信.md",
-    "interview/老虎国际.md",
-    "interview/白龙马.md",
     "OS/异常 & 中断.md",
     "Java/grammer/grammer.md",
     "Java/thread/thread.md",
-    "Java/class_and_instance/class_and_instance.md",
-    "Java/advance/advance.md",
-    "OS/ostep/virtualization/memory/segmentation.md",
-    "OS/ostep/virtualization/memory/mechanism_address translation.md",
-    "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png",
-    "OS/ostep/virtualization/memory/summary_hardware support.md"
+    "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png"
   ]
 }
