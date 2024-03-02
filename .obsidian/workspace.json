@@ -1,19 +1,19 @@
 {
   "main": {
-    "id": "5fa247930169a3c9",
+    "id": "ccafb64d566da30a",
     "type": "split",
     "children": [
       {
-        "id": "7d65c3ec170cdd33",
+        "id": "574c247b6ea59255",
         "type": "tabs",
         "children": [
           {
-            "id": "12e84eb21fa8439b",
+            "id": "294b407e1d55b264",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/领岳科技.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -26,15 +26,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "c87f4d3a25d5272e",
+    "id": "a57ca5d893ee72f8",
     "type": "split",
     "children": [
       {
-        "id": "9c993f0eab604fb7",
+        "id": "5909b50e24eb307d",
         "type": "tabs",
         "children": [
           {
-            "id": "67dd981fc3075972",
+            "id": "ae5b5ed7b96e2d63",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +44,7 @@
             }
           },
           {
-            "id": "ba830c85cb50b926",
+            "id": "5e0b7524346cda48",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -59,7 +59,7 @@
             }
           },
           {
-            "id": "8940504db86834d9",
+            "id": "decbe5fec32305c9",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -70,23 +70,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 231.5
+    "width": 300
   },
   "right": {
-    "id": "e54cca2b1a4710d6",
+    "id": "b63443abeb70d2a7",
     "type": "split",
     "children": [
       {
-        "id": "ccae3721b5e0b4dc",
+        "id": "3beb7d35062d8b8f",
         "type": "tabs",
         "children": [
           {
-            "id": "0a870261410b2a74",
+            "id": "06a1999d7f59af03",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/领岳科技.md",
+                "file": "读书笔记/MySQL/note/日志.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,7 +98,19 @@
             }
           },
           {
-            "id": "49d59b676895bb57",
+            "id": "4c834ed74857d3aa",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "读书笔记/MySQL/note/日志.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "79ada25731bd46a6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -109,97 +121,49 @@
             }
           },
           {
-            "id": "4cb8d4176b15c5e5",
+            "id": "25e51a440572fb01",
             "type": "leaf",
             "state": {
-              "type": "outgoing-link",
+              "type": "all-properties",
               "state": {
-                "file": "interview/领岳科技.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
               }
             }
           },
           {
-            "id": "db7c054552e9bbec",
+            "id": "386ebe688df977c8",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/领岳科技.md"
+                "file": "读书笔记/MySQL/note/日志.md"
               }
-            }
-          },
-          {
-            "id": "6497d55a24dde659",
-            "type": "leaf",
-            "state": {
-              "type": "advanced-tables-toolbar",
-              "state": {}
-            }
-          }
-        ],
-        "currentTab": 4
-      },
-      {
-        "id": "e9da477ccbd30d11",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "7a5d19f07e005f37",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 424.5,
+    "width": 300,
     "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
-      "templater-obsidian:Templater": false,
       "table-editor-obsidian:Advanced Tables Toolbar": false,
       "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "command-palette:打开命令面板": false,
-      "workspaces:管理工作区布局": false
+      "workspaces:管理工作区布局": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "12e84eb21fa8439b",
+  "active": "294b407e1d55b264",
   "lastOpenFiles": [
-    "interview/tips.md",
-    "interview/抖音开放平台.md",
-    "读书笔记/MySQL/note/日志.md",
-    "interview/老虎国际.md",
-    "interview/乐信.md",
     "interview/领岳科技.md",
-    "interview/白龙马.md",
-    "读书笔记/MySQL/note/并发.md",
-    "读书笔记/MySQL/note/查询.md",
-    "读书笔记/MySQL/note/数据存储.md",
-    "读书笔记/MySQL/note/锁定读加锁机制.md",
-    "interview/AppLoving.md",
-    "Database/redis/redis.md",
-    "interview/易宝支付.md",
-    "interview/宜信.md",
-    "OS/文件系统.md",
-    "OS/网络 IO.md",
-    "Java/gc/gc.md",
-    "Java/jvm_base/jvm_base.md",
-    "Web/distribution/lock.md",
-    "Web/system_design/system_design.md",
-    "Web/distribution/distribution.md",
-    "Java/collection/collection.md",
-    "OS/异常 & 中断.md",
-    "Java/grammer/grammer.md",
-    "Java/thread/thread.md",
-    "OS/ostep/virtualization/memory/img/segmentation/Snipaste_2022-06-14_19-22-47.png"
+    "读书笔记/MySQL/note/数据存储.md"
   ]
 }

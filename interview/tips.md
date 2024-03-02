@@ -7,6 +7,7 @@
 * 根据资金位置的不同分为：
 * 上行：支付 -> 销售
 * 下行：销售 -> 支付
+* 面向付款的异步清结算流程，没有直接的用户流量
 
 业务流程：
 * 支付：卡支付
@@ -20,21 +21,34 @@
 * 重新确定领域边界
 * 便于后期承载更多清结算业务逻辑
 
+重构做了哪些事
+* 功能的平迁
+* 确认领域职责，迁出领域外逻辑，抽象清结算流程的模型
+* 切流
+
+遇到的问题、bug
+* 支付中台：
+* 清结算：
+	* 切流时，资金流数据要和信息流一致
+		* 只对信息流打标
+			* 资金先到但没打标：信息流不切
+			* 资金流没有到则对信息流打标
+		* 资金流处理
+			* 查信息流是否打标
+			* 查不到信息流（资金流先到）则不打标
+
+资金流先到的场景：
+* 5002 带回来了用户赎回
+* 用户赎回到余额盈
+* 上午触发了结算但转购的信息流还没跑
+
+
 功能
 * 清算：三要素
 * 结算：资金位置的感知、推进、触发划拨
 * 支付：抽象度小满支付的资金划拨能力、资产互转
 
-技术
-* 清结算
-	* 文件读取、生成（二次聚合）
-	* 多线程批处理
-	* 分布式锁 + 幂等
-	* 异步处理
-	* spring event
-
 架构
-
 1. 交易侧文件给到清算
 2. 清算解析文件、校验、清算、通知结算（批处理）
 3. 清算直接或异步通知结算开启结算
@@ -45,7 +59,7 @@
 优缺点
 
 优点
-1. 架构清晰
+1. 架构清晰，一清二清解耦，每个流程都有解析、校验、清算（三要素）
 2. 领域划分明确
 
 改进
@@ -56,7 +70,6 @@
 亮点
 1. 引入一清、二清的概念，可以（赎转购）将销售清结算和支付清结算打通
 2. 无资损、不影响业务地分阶段切流
-
 
 切流
 * 直接从切 settle 说
@@ -110,7 +123,8 @@
 		* {operator: and, left:{userId:xxx},right:{operator:or,left:xxx,right:{orderNo:xxx}}}
 	* 有生效开关配置，必须在开关 ON 时才启用，开关实时读取配置
 	* 配置的 key 拼入批次号，第一次构建拦截树后以批次号存入本地缓存
-		* curl 接口清除缓存
+		* curl 接口刷新
+		* 默认 24h 
 	* 构建
 		* 有 operator key，则递归调用构建方法获取 left 和 right key 构建左右节点，节点类型为 OperatorNode 并返回
 		* 否则构建 ConditionNode，存放各种维度数据的 Set，配置中的白名单数据直接读进 Set 中
@@ -123,7 +137,7 @@
 		* 如果次数是 0
 			* setNx 放入 key & value & 过期时间
 			* 加锁成功次数 +1，返回 true
-			* 加锁 map 中删掉此 kv，并返回 false，业务抛异常
+			* 加锁失败则 map 中删掉此 kv，并返回 false，业务抛异常
 		* 如果次数不是 0
 			* 次数 + 1，返回 true
 	* 解锁
@@ -134,3 +148,66 @@
 			* 否则返回 false，，业务抛异常
 		* 次数大于 1
 			* 次数 -1，返回 true
+
+一些问题
+* 余额 500 分
+	* binlog
+	* 事务
+	* [3、资产互转表500分未清零问题排查（RR隔离级别下的脏读） (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/7Gz5kQ4LYp/shCpvgbC8sjRtG)
+* 引入 fifa 导致流程引擎不开启
+	* springboot 启动
+	* [20220601-引入 fifa 导致流程不开启 (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/Zc41lh8kjF/ZFw3eReyp9mlm1)
+* 慢查
+```
+explain  
+select *  
+from pay_settle.sales_settle_detail  
+where report_date = '20240116'  
+  and direction = 1  
+  and clear_ta_code = '01'  
+  and order_no > ''
+order by serial_no  
+limit 10;
+```
+
+| | |
+| :- | :- |
+| **id** | 1 |
+| **select\_type** | SIMPLE |
+| **table** | sales\_settle\_detail |
+| **partitions** | null |
+| **type** | ref |
+| **possible\_keys** | idx\_report\_date\_direction\_ta,idx\_report\_date\_direction\_fund |
+| **key** | idx\_report\_date\_direction\_ta |
+| **key\_len** | 133 |
+| **ref** | const,const,const |
+| **rows** | 1 |
+| **filtered** | 100 |
+| **Extra** | Using index condition; Using where; Using filesort |
+```
+explain  
+select min(serial_no)  
+from pay_settle.sales_settle_detail  
+where report_date = '20240116'  
+  and direction = 1  
+  and clear_ta_code = '01';
+```
+| | |
+| :- | :- |
+| **id** | 1 |
+| **select\_type** | SIMPLE |
+| **table** | sales\_settle\_detail |
+| **partitions** | null |
+| **type** | ref |
+| **possible\_keys** | idx\_report\_date\_direction\_ta,idx\_report\_date\_direction\_fund |
+| **key** | idx\_report\_date\_direction\_ta |
+| **key\_len** | 133 |
+| **ref** | const,const,const |
+| **rows** | 1 |
+| **filtered** | 100 |
+| **Extra** | null |
+猜测是找最小值是回表后维护小顶堆即可
+但是 order by limit 一定会走 filesort（内存或磁盘排序）
+加了 order_no 有索引，其实差不多，但是最坏情况（数据量很大时）肯定堆排序更快
+
+每个系统都有它最核心的指标。比如在收单领域：进件系统第一重要的是保证入件准确，第二重要的是保证上单效率。清结算系统第一重要的是保证准确打款，第二重要的是保证及时打款。我们负责的系统是美团点评智能支付的核心链路，承担着智能支付 100%的流量，内部习惯称为核心交易。因为涉及美团点评所有线下交易商家、用户之间的资金流转，对于核心交易来说：第一重要的是稳定性，第二重要的还是稳定性。
