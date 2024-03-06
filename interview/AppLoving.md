@@ -9,7 +9,7 @@ leetcode 39（40）
 
 * redis zset
 	1. 每个 uid 一个 zset
-	2. 单个 uid 每次每次访问落一个 kv，v 为时间戳
+	2. 单个 uid 每次访问落一个 kv，v 为时间戳
 	3. 如果当前时间 n 分钟前到当前时间的 kv 数量超过阈值，则拒绝
 	4. 否则在 zset 中加入 kv
 * 环形队列
