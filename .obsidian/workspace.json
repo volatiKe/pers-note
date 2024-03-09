@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "44360e3a5dbc2a5f",
+        "id": "26432f69251b2ecb",
         "type": "tabs",
         "children": [
           {
-            "id": "c6eff140ce532f92",
+            "id": "db317d64e80d9e65",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/tips.md",
+                "file": "读书笔记/MySQL/note/锁.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/tips.md",
+                "file": "读书笔记/MySQL/note/锁.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/tips.md",
+                "file": "读书笔记/MySQL/note/锁.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/tips.md"
+                "file": "读书笔记/MySQL/note/锁.md"
               }
             }
           }
@@ -147,8 +147,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,8 +161,16 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "c6eff140ce532f92",
+  "active": "db317d64e80d9e65",
   "lastOpenFiles": [
+    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/锁.md",
+    "读书笔记/MySQL/note/并发.md",
+    "interview/tips.md",
+    "读书笔记/MySQL/note/存储.md",
+    "DataStructure/search/search.md",
+    "DataStructure/base_structure/base_structure.md",
+    "DataStructure/bigdata/bigdata.md",
     "Pattern/factory/factory.md",
     "Pattern/consumer_producer/consumer_producer.md",
     "Network/transport/transport.md",
@@ -181,14 +188,6 @@
     "Java/concurrency/concurrency.md",
     "Java/common_class/common_class.md",
     "Java/collection/collection.md",
-    "Java/class_and_instance/class_and_instance.md",
-    "Java/advance/advance.md",
-    "Web/spring/spring.md",
-    "Web/distribution/lock.md",
-    "Web/distribution/distribution.md",
-    "Web/design/design.md",
-    "Pattern/single/single.md",
-    "OS/异常 & 中断.md",
-    "OS/文件系统.md"
+    "Java/class_and_instance/class_and_instance.md"
   ]
 }

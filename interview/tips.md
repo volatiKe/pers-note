@@ -236,9 +236,13 @@ where report_date = '20240116'
 | **rows** | 1 |
 | **filtered** | 100 |
 | **Extra** | null |
-猜测是找最小值是回表后维护小顶堆即可
-但是 order by limit 一定会走 filesort（内存或磁盘排序）
-加了 serial_no 有索引，其实差不多，但是最坏情况（数据量很大时）肯定堆排序更快
+猜测一：
+是找最小值是回表后维护小顶堆即可
+但是 order by limit 一定会走 filesort（内存或磁盘排序），此 case 下堆排序比 filesort 快
+
+猜测二：
+走了索引合并，因为 serial 联合索引查出来的都是有序的 id，可以直接求 id 交集，但是 serial>'' 拿到的 id 过多，所以比较耗时，而后续 serial_no 有值的 sql 就执行的快多了
+
 
 
 系统核心指标：
