@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "26432f69251b2ecb",
+        "id": "d23f01320c5382d7",
         "type": "tabs",
         "children": [
           {
-            "id": "db317d64e80d9e65",
+            "id": "d54930890532a65a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "读书笔记/MySQL/note/锁.md",
+                "file": "interview/未命名.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读书笔记/MySQL/note/锁.md",
+                "file": "interview/未命名.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "读书笔记/MySQL/note/锁.md",
+                "file": "interview/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "读书笔记/MySQL/note/锁.md"
+                "file": "interview/未命名.md"
               }
             }
           }
@@ -161,12 +161,14 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "db317d64e80d9e65",
+  "active": "d54930890532a65a",
   "lastOpenFiles": [
-    "读书笔记/MySQL/note/查询.md",
-    "读书笔记/MySQL/note/锁.md",
-    "读书笔记/MySQL/note/并发.md",
     "interview/tips.md",
+    "OS/文件系统.md",
+    "读书笔记/MySQL/note/日志.md",
+    "读书笔记/MySQL/note/锁.md",
+    "读书笔记/MySQL/note/查询.md",
+    "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/存储.md",
     "DataStructure/search/search.md",
     "DataStructure/base_structure/base_structure.md",
@@ -186,8 +188,6 @@
     "Java/grammer/grammer.md",
     "Java/gc/gc.md",
     "Java/concurrency/concurrency.md",
-    "Java/common_class/common_class.md",
-    "Java/collection/collection.md",
-    "Java/class_and_instance/class_and_instance.md"
+    "Java/common_class/common_class.md"
   ]
 }
