@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "d23f01320c5382d7",
+        "id": "c544f4a8190117a3",
         "type": "tabs",
         "children": [
           {
-            "id": "d54930890532a65a",
+            "id": "99678314ce605920",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "interview/未命名.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/未命名.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "interview/未命名.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -161,12 +152,19 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "d54930890532a65a",
+  "active": "99678314ce605920",
   "lastOpenFiles": [
+    "Web/distribution/distribution.md",
+    "Database/redis/redis.md",
+    "Web/system_design/system_design.md",
+    "Web/distribution/lock.md",
+    "interview/未命名.md",
+    "读书笔记/MySQL/note/锁.md",
+    "Java/collection/collection.md",
+    "读书笔记/MySQL/note/日志.md",
+    "interview/老虎国际.md",
     "interview/tips.md",
     "OS/文件系统.md",
-    "读书笔记/MySQL/note/日志.md",
-    "读书笔记/MySQL/note/锁.md",
     "读书笔记/MySQL/note/查询.md",
     "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/存储.md",
@@ -181,13 +179,6 @@
     "Network/link/link.md",
     "Network/application/application.md",
     "Java/thread/thread.md",
-    "Java/oop/oop.md",
-    "Java/memory_model/memory_model.md",
-    "Java/jvm_base/jvm_base.md",
-    "Java/io/io.md",
-    "Java/grammer/grammer.md",
-    "Java/gc/gc.md",
-    "Java/concurrency/concurrency.md",
-    "Java/common_class/common_class.md"
+    "Java/oop/oop.md"
   ]
 }
