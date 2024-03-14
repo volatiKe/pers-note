@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "c544f4a8190117a3",
+        "id": "5bdb276cd5c22249",
         "type": "tabs",
         "children": [
           {
-            "id": "99678314ce605920",
+            "id": "ac599a6ee1f5eeab",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "interview/tips.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "interview/tips.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "interview/tips.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "interview/tips.md"
+              }
             }
           }
         ],
@@ -152,22 +161,23 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "99678314ce605920",
+  "active": "ac599a6ee1f5eeab",
   "lastOpenFiles": [
+    "interview/未命名.md",
+    "interview/tips.md",
+    "Web/design/design.md",
+    "读书笔记/MySQL/note/存储.md",
+    "读书笔记/MySQL/note/日志.md",
+    "读书笔记/MySQL/note/锁.md",
+    "读书笔记/MySQL/note/并发.md",
     "Web/distribution/distribution.md",
     "Database/redis/redis.md",
     "Web/system_design/system_design.md",
     "Web/distribution/lock.md",
-    "interview/未命名.md",
-    "读书笔记/MySQL/note/锁.md",
     "Java/collection/collection.md",
-    "读书笔记/MySQL/note/日志.md",
     "interview/老虎国际.md",
-    "interview/tips.md",
     "OS/文件系统.md",
     "读书笔记/MySQL/note/查询.md",
-    "读书笔记/MySQL/note/并发.md",
-    "读书笔记/MySQL/note/存储.md",
     "DataStructure/search/search.md",
     "DataStructure/base_structure/base_structure.md",
     "DataStructure/bigdata/bigdata.md",
@@ -178,7 +188,6 @@
     "Network/net/net.md",
     "Network/link/link.md",
     "Network/application/application.md",
-    "Java/thread/thread.md",
-    "Java/oop/oop.md"
+    "Java/thread/thread.md"
   ]
 }
