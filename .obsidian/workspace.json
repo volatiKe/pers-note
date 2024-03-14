@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "interview/tips.md",
+                "file": "Web/spring/spring.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "interview/tips.md",
+                "file": "Web/spring/spring.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "interview/tips.md",
+                "file": "Web/spring/spring.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "interview/tips.md"
+                "file": "Web/spring/spring.md"
               }
             }
           }
@@ -164,6 +164,7 @@
   },
   "active": "c6eff140ce532f92",
   "lastOpenFiles": [
+    "interview/tips.md",
     "Pattern/factory/factory.md",
     "Pattern/consumer_producer/consumer_producer.md",
     "Network/transport/transport.md",
@@ -188,7 +189,6 @@
     "Web/distribution/distribution.md",
     "Web/design/design.md",
     "Pattern/single/single.md",
-    "OS/异常 & 中断.md",
-    "OS/文件系统.md"
+    "OS/异常 & 中断.md"
   ]
 }
