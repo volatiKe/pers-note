@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "7e8d5d09ec66588c",
+        "id": "943fc540ba3fcd75",
         "type": "tabs",
         "children": [
           {
-            "id": "a7f002b3086d0244",
+            "id": "3060e634adcdcff8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "读书笔记/MySQL/note/锁.md",
-                "mode": "source",
-                "backlinks": false,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "读书笔记/MySQL/note/锁.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "读书笔记/MySQL/note/锁.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,9 +130,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "读书笔记/MySQL/note/锁.md"
-              }
+              "state": {}
             }
           }
         ],
@@ -161,34 +152,39 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "a7f002b3086d0244",
+  "active": "3060e634adcdcff8",
   "lastOpenFiles": [
+    "Web/msg/kafka.md",
+    "Web/distribution/lock.md",
+    "Web/distribution/distribution.md",
+    "Web/design/design.md",
+    "Database/select/select.md",
+    "Database/index/index.md",
+    "Database/base/base.md",
+    "Database/concurrency/concurrency.md",
+    "Database/redis/redis.md",
+    "Database/redis/image/master_servant_copy.png",
+    "Database/redis/image/thread_model.jpg",
+    "Database/redis/image/quicklist.png",
+    "Database/redis/image/skiplist.jpg",
+    "Web/msg",
+    "读书笔记/MySQL/note/锁.md",
     "读书笔记/MySQL/note/日志.md",
     "OS/文件系统.md",
     "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/查询.md",
     "读书笔记/MySQL/note/存储.md",
-    "Database/redis/redis.md",
     "Java/class_and_instance/class_and_instance.md",
     "Java/advance/advance.md",
-    "Database/concurrency/concurrency.md",
     "读书笔记/MySQL/pic/数据存储方式_1.png",
     "interview/未命名.md",
     "interview/tips.md",
-    "Web/design/design.md",
-    "读书笔记/MySQL/note/锁.md",
-    "Web/distribution/distribution.md",
     "Web/system_design/system_design.md",
-    "Web/distribution/lock.md",
     "Java/collection/collection.md",
     "interview/老虎国际.md",
     "DataStructure/search/search.md",
     "DataStructure/base_structure/base_structure.md",
     "DataStructure/bigdata/bigdata.md",
-    "Pattern/factory/factory.md",
-    "Pattern/consumer_producer/consumer_producer.md",
-    "Network/transport/transport.md",
-    "Network/process/process.md",
-    "Network/net/net.md"
+    "Pattern/factory/factory.md"
   ]
 }
