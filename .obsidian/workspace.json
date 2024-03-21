@@ -4,15 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "943fc540ba3fcd75",
+        "id": "a4c66fa4f66864bc",
         "type": "tabs",
         "children": [
           {
-            "id": "3060e634adcdcff8",
+            "id": "8e2d7b051964d6f0",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "interview/tips.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "interview/tips.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "interview/tips.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +137,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "interview/tips.md"
+              }
             }
           }
         ],
@@ -152,39 +161,39 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "3060e634adcdcff8",
+  "active": "8e2d7b051964d6f0",
   "lastOpenFiles": [
-    "Web/msg/kafka.md",
+    "INDEX.md",
+    "DataStructure/base_structure/base_structure.md",
+    "读书笔记/MySQL/pic/数据存储方式_1.png",
+    "Web/middle/image/quicklist.png",
+    "Web/middle/image/master_servant_copy.png",
+    "Web/middle/image/thread_model.jpg",
+    "读书笔记/MySQL/INDEX/MySQL.md",
+    "DataStructure/bigdata/bigdata.md",
+    "DataStructure/sort/sort.md",
+    "Network/application/application.md",
+    "DataStructure/search/search.md",
+    "Network/application/image/dns_layer.jpg",
+    "Web/middle/redis.md",
+    "Database/select/select.md",
+    "读书笔记/MySQL/note/并发.md",
+    "Database/index/index.md",
+    "Database/concurrency/concurrency.md",
+    "Database/base/base.md",
+    "Web/middle/kafka.md",
     "Web/distribution/lock.md",
     "Web/distribution/distribution.md",
     "Web/design/design.md",
-    "Database/select/select.md",
-    "Database/index/index.md",
-    "Database/base/base.md",
-    "Database/concurrency/concurrency.md",
-    "Database/redis/redis.md",
-    "Database/redis/image/master_servant_copy.png",
-    "Database/redis/image/thread_model.jpg",
-    "Database/redis/image/quicklist.png",
     "Database/redis/image/skiplist.jpg",
-    "Web/msg",
+    "Web/middle",
     "读书笔记/MySQL/note/锁.md",
     "读书笔记/MySQL/note/日志.md",
     "OS/文件系统.md",
-    "读书笔记/MySQL/note/并发.md",
     "读书笔记/MySQL/note/查询.md",
     "读书笔记/MySQL/note/存储.md",
     "Java/class_and_instance/class_and_instance.md",
     "Java/advance/advance.md",
-    "读书笔记/MySQL/pic/数据存储方式_1.png",
-    "interview/未命名.md",
-    "interview/tips.md",
-    "Web/system_design/system_design.md",
-    "Java/collection/collection.md",
-    "interview/老虎国际.md",
-    "DataStructure/search/search.md",
-    "DataStructure/base_structure/base_structure.md",
-    "DataStructure/bigdata/bigdata.md",
-    "Pattern/factory/factory.md"
+    "interview/未命名.md"
   ]
 }
