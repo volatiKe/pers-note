@@ -100,17 +100,21 @@ public static ExecutorService newCachedThreadPool() {
 * NEW：仅仅是 JVM 为其分配了内存，初始化变量
 * RUNNABLE：创建栈和程序计数器，等待被 CPU 调度
 * RUNNING：获得了 CPU 的时间片，处于执行状态
-* WAITING / TIMEWAITING：主动进入等待池，会释放 CPU 资源，需要其他线程唤醒或到达设定时间
+* WAITING / TIMEWAITING：进入锁对象的等待队列中，会释放 CPU 资源，需要其他线程唤醒或到达设定时间
 * BLOCKED：线程因竞争不到锁而产生阻塞，会释放 CPU 资源，只有获得锁才会脱离阻塞态
 * TERMINATED：线程执行完毕或出现异常
 
 需要注意的是，BLOCKED 阻塞是因为竞争不到锁资源而被迫停止，而 WAITING 和 TIME WAITING 则仅仅是自行产生阻塞，和锁无关。这三种阻塞仅仅定义在 Java 层面，而操作系统中只有一种阻塞状态，所以 sleep 能够「不释放锁但释放 CPU 资源」
 
+> OS 层面阻塞的本质：将进程挂起，不再参与进程调度，即 OS 调度器不会再将 CPU 时间片分给此进程
+
 ### 3.1 start / run
 
 start() 是线程的启动方法，会判断线程是否处于 NEW 状态，然后将线程添加到 ThreadGroup 中，并调用 native 的 start0()，start0() 会开启线程的特性，等待操作系统调度。
 
-run() 只是一个对象的普通方法，因为会在 start0() 中被调用所以线程才会执行它，如果直接调用就和其他方法一样只会顺序执行。
+run() 只是一个对象的普通方法，因为会在 start0() 中被调用所以线程才会执行它，如果直接调用就和其他方法一样只会顺序执行
+
+> 需要注意的是，线程池底层都是使用了 run()
 
 ### 3.2 wait / notify
 
@@ -189,6 +193,10 @@ ThreadLocal 解决了线程内共享变量的问题，它存储的变量在线�
 ### 4.1 实现原理
 
 * ThreadLocal 存在一个静态内部类 ThreadLocalMap，以 ThreadLocal 对象作为 key 进行值的存放
+
+> 为什么用 TL 作为 key？
+> 因为一个线程可能会有多个 TL 对象
+
 * Thread 为每个线程维护了一个 ThreadLocalMap 的并持有它的引用，这样在线程中访问 ThreadLocal 的时候就可以通过当前线程对象获取到 ThreadLocalMap，再根据当前 ThreadLocal 作为key 从而获取到值
 
     ```java
@@ -248,7 +256,15 @@ public T get() {
 
 ### 4.2 内存泄漏
 
-ThreadLocalMap 是一个 Entry 数组，Entry 使用 ThreadLocal 作为 key，并且 Entry 存在指向 ThreadLocal 的弱引用
+可能导致内存泄漏的是 TL 在堆上创建的 TLM 中的 key、value
+
+![threadlocal ref](img/threadlocal.png)
+
+#### 情况一
+
+栈上的 TL 引用不再被使用，但还被 TLM 持有，导致 TL 无法被 GC
+
+* 解决：Entry 持有 ThreadLocal 对象的弱引用，当线程中不再使用 ThreadLocal 对应的 value 后，只剩弱引用的 key 就可以被 GC，防止内存泄漏
 
 ```java
 static class Entry extends WeakReference<ThreadLocal<?>> {  
@@ -261,23 +277,14 @@ static class Entry extends WeakReference<ThreadLocal<?>> {
     }  
 }
 ```
-如图中的虚线：
-![threadlocal ref](img/threadlocal.png)
 
-**为什么 Entry 指向 ThreadLocal 的引用被设计为弱引用**：
+#### 情况二
 
-* 因为 ThreadLocalMap 不想因为自己存储了 ThreadLocal 对象而影响到它的垃圾回收。设计成弱引用以后，一旦调用方不想再使用 ThreadLocal，将其设置为 null，由于弱引用的关系 Entry 中的 ThreadLocal 就可以被回收
+只有 Thread 对象一直存在（线程池），那么 TLM 中的 value 对象就一直被持有，无法被 GC
 
-**弱引用带来的问题**：
-
-* 作为 key 的 ThreadLocal 也被 GC 后，value 还存在，只要线程存活，value 就无法被 GC，而且这些 value 失去了 key 无法被访问，导致内存泄漏，所以设计了防护措施：在 get() / set() / remove() 的时候都会清除所有 key 为 null 的 value
-* 如果处于线程池环境，并且没有调用以上方法，那么就会造成内存泄露
-
-**避免内存泄漏**：
-
-* 手动调用 ThreadLocal 的 remove()
+* 解决：在调用 TL 的 get() / set() / remove() 的时候都会清除所有 key 为 null 的 value，所以在 TL 用完后手动调用 TL 的 remove() 即可
 
 ### 4.3 应用
 
 Spring 中 TL 的应用：
-* 将 db 连接绑定到当前线程来保证这个线程中对 db 的操作用的是同一个连接
+* 将 db 连接绑定到当前线程来保证这个线程中对 db 的操作用的是同一个连接就是将 db 连接放在了 TL 中
