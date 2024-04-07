@@ -1,8 +1,10 @@
 # binary serach
 
-todo tips
+## tips
 
-* 两种不同的写法，left <= right是在循环里直接找到目标值，left < right在循环里面是排除法，排除掉不是目标值的范围
+* 循环条件的两种不同的写法：
+    * left <= right 是在循环里直接找到目标值
+    * left < right 是在循环里面是排除法，排除掉不是目标值的范围
 
 ## 不含重复元素的直接查找
 

@@ -21,7 +21,50 @@ a[i]_address = base_address + i * data_type_size
 
 ## 2. 链表
 
-**链表**：借助指针将零散的内存串联起来，与数组最大的的区别是链表没有大小限制，天然支持动态扩容
+### 链表访问计数
+
+```java
+ListNode node4 = new ListNode(4, null);
+ListNode node3 = new ListNode(3, node4);
+ListNode node2 = new ListNode(2, node3);
+ListNode node1 = new ListNode(1, node2);
+ListNode vir = new ListNode(-1, node1);
+```
+
+#### 有虚拟头节点
+
+##### 直接计数
+
+```java
+int n = 3;
+ListNode cur = vir;
+while (n > 0) {
+    cur = cur.next;
+    n--;
+}
+// 3
+System.out.println(cur.val);
+```
+
+n 减 3 次后跳出循环，即 cur 从 vir 开始走 3 步，指向 3
+
+##### 快慢指针
+
+```java
+ListNode slow = vir;
+ListNode fast = vir;
+while(fast!=null && fast.next!=null){
+    slow = slow.next;
+    fast = fast.next.next;
+}
+```
+
+奇数个节点：slow 位于中心
+偶数个节点：slow 偏左 
+
+```java
+
+```
 
 **LRU**（Least Recently Used）：
 
