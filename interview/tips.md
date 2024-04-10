@@ -115,7 +115,6 @@
 
 ## 资损问题
 * 高端运营活动线下补打款重复打款
-	* [20220520 活动后台打款重复打款资损 (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/nbLu5Sr5Ly/V6gZaMvJX5pf9d)
 		* 打款的 excel 上传了两次，每次生成一个批次，第一次的作废
 		* 第二次打款后业务反馈只有 200 条打款成功
 		* 没有补打款逻辑，增加了按批次号的接口
@@ -303,12 +302,10 @@
 	* 每笔子单需要更新收款单的已退金额，对收款单加锁
 	* 代码问题：加锁前开启事务，导致每次补单只有一笔订单能正确的从旧退款金额更新到新退款金额，其他的订单拿到的已退金额均为还没更新的快照版本
 * 余额户 500 分
-	* [3、资产互转表500分未清零问题排查（RR隔离级别下的脏读） (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/7Gz5kQ4LYp/shCpvgbC8sjRtG)
 		* 分布式锁内有事务，但走了内部调用未生效
 		* 用了spring event 中的 after commit，spring 自动开了新事务
 		* 以上两点导致出现了事务在锁外边的情况
 * 引入 fifa 导致流程引擎不开启
-	* [20220601-引入 fifa 导致流程不开启 (duxiaoman-int.com)](https://zhishi.duxiaoman-int.com/knowledge/HFVrC7hq1Q/eyzDp1Jx9p/Zc41lh8kjF/ZFw3eReyp9mlm1)
 * 慢查
 ```
 explain  
