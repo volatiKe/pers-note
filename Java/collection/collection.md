@@ -1,13 +1,10 @@
-# 集合
+## Collection
 
----
-## 1. Collection
+### List
 
-### 1.1 List
+#### ArrayList
 
-#### 1.1.1 ArrayList
-
-**数组拷贝**：
+##### 数组拷贝
 
 System.arraycopy()：
 
@@ -36,22 +33,24 @@ public static <T,U> T[] copyOf(U[] original, int newLength, Class<? extends T[]>
 
 可以看到 copyOf() 是在内部创建了一个新的数组，然后调用 System.arraycopy() 进行元素的复制并返回新数组。需要注意的是，copyOf() 对于引用类型数据仅仅拷贝地址，也就是说它是属于**浅拷贝**。
 
-**扩容**：ArrayList 会扩容到当前的 1.5 倍容量，使用 Arrays.copyOf() 进行数组复制操作。
+##### 扩容
 
-**插入**：
+ArrayList 会扩容到当前的 1.5 倍容量，使用 Arrays.copyOf() 进行数组复制操作。
+
+##### 插入
 
 * 指定位置：需要移动元素，所以时间复杂度为 O(n-i)，移动元素也是通过 Arrays.copyOf() 实现
 * 不指定位置：直接增加至末尾，时间复杂度为 O(1)，存储大量数据时效率可能会超过 LinkedList
 
 可以发现，ArrayList 的消耗较大的就是扩容和在指定位置插入元素，所以使用中最好事先指定大小，避免频繁的扩容。
 
-#### 1.1.2 LinkedList
+#### LinkedList
 
 LinkedList 的底层是一个双向链表。链表的查询效率较低，所以在查询时会和容器的 size 比较，如果查找位置靠近头部，就从链表头开始查找，否则就从链表尾部查找，时间复杂度是 O(n/2)，但是比顺序查找快不了多少。
 
-### 1.2 Set
+### Set
 
-#### 1.2.1 HashSet
+#### HashSet
 
 ```java
 public boolean add(E e){
@@ -61,7 +60,7 @@ public boolean add(E e){
 
 HashSet 的底层就是 HashMap，HashSet 内部定义一个 PRESENT 对象。当添加元素时会将这个对象作为 value 插入 HashMap，这样如果 key 存在，则由于 value 相同则 key 不会发生任何变化；如果 key 不存在，那么元素成功插入。
 
-### 1.3. Queue / Deque
+### Queue / Deque
 
 Deque 支持同时从两端添加或移除元素，属于双端队列。因此 Deque 接口的实现可以被当作 FIFO 队列使用，也可以当作 LIFO 队列（栈）来使用。
 
@@ -77,11 +76,11 @@ ArrayDeque 是 Deque 的一种实现：
 * 阻塞队列：BlockingQueue
 * 非阻塞队列：ConcurrentLinkedQueue
 
-## 2. Map
+### Map
 
-### 2.1 HashMap
+#### HashMap
 
-#### 2.1.1 Q&A
+##### Q & A
 
 为什么 String、Integer 这种包装类更适合作为键？
 
@@ -92,12 +91,13 @@ JDK 8 的 HashMap 为什么使用红黑树而不是普通的二叉树？
 
 * 二叉树存在退化成链表的可能性，而红黑树是一种平衡树，查找的平均效率相比二叉树更高
 
-#### 2.1.2 HashMap 的线程安全问题
+##### HashMap 的线程安全问题
 
 * 1.7 下并发 put 触发并发扩容时，会导致链表成环，1.8 修复了这个问题
 * 并发 put 可能会导致值覆盖的问题，这是因为容器本身不是线程安全的
 * put 时并发 get，如果 put 触发扩容，那么 get 可能拿不到值
-#### 2.1.3 ConcurrentHashMap
+
+#### ConcurrentHashMap
 
 * put 时如果某个位置为空，则 cas，否则加锁再 put，同时支持数组长度个线程并发操作容器
 * 扩容时其他线程 put，如何保证不丢数据
@@ -107,20 +107,20 @@ JDK 8 的 HashMap 为什么使用红黑树而不是普通的二叉树？
 	* 单个位置的数据转移完毕后，此位置指向新位置
 	* 所有位置的数据转移完毕后，直接容器指向新数组
 
-### 2.2 LinkedHashMap
+#### LinkedHashMap
 
 LinkedHashMap 继承自 HashMap，但在其基础上，按照插入元素的顺序，将所有元素使用双向链表的方式连接起来，并维护有头尾指针。
 
-需要注意的是，LinkedHashMap 的结构恰好就是 LRU 的一种实现。
+并且，LinkedHashMap 的结构恰好就是 LRU 的一种实现。
 
-### 2.3 TreeMap
+#### TreeMap
 
 * TreeMap 内部按照 key 的自然升序进行排序，如果需要按照倒序排序，需要在构造 TreeMap 时传入 Comparator 比较器来作为 TreeMap 的排序依据。Comparator 接口的 compare() 是具体的比较方法
 * compare() 一般会调用待比较对象的 compareTo() 来进行比较，而 compareTo() 是 Comparable 接口的方法
 * 所以 TreeMap 中的 key 都需要实现 Comparable 接口，当然例如 String / Integer 等都实现了 Comparable 接口，提供了默认的 compareTo()，这些对象作为 key 时可以直接使用
 * TreeMap 的底层为红黑树，而红黑树的平衡操作不会改变它的中序遍历顺序，所以使用中序遍历的结果就是按照比较器排序后的结果
 
-## 3. fail-fast / fail-safe
+## fail-fast / fail-safe
 
 fail-fast 是一种立即报告故障的机制，如在一个方法中做除法运算，只要检测到除数为 0 就立刻抛出运行时异常。这种机制可以事先识别出一些错误。
 
@@ -138,7 +138,7 @@ fail-fast 是一种立即报告故障的机制，如在一个方法中做除法�
 
 fail-safe 的容器在需要遍历时会对容器进行拷贝，而遍历操作就是在这份拷贝上进行。
 
-## 4. Copy-On-Write
+## COW
 
 CopyOnWriteArrayList / CopyOnWriteSet 都是基于 COW 的 fail-safe 容器：
 

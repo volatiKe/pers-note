@@ -78,64 +78,32 @@ synchronized 和 ReentrantLock 都是可重入锁，对于 ReentrantLock 的可�
 
 ### 3.3 锁的公平性
 
-公平锁指多个线程按照申请锁的顺序获取锁，线程直接进入队列，只有第一个线程能够获取锁，其他线程都会阻塞；非公平锁则是在加锁时先尝试获取锁，获取不到才进入队列等待，如果获取时锁可用，则不需要进入队列，优先于队列中的其他线程获得了锁。
+#### 公平锁
 
-非公平锁相比于公平锁可以更少的切换线程，减少开销，但是存在队列中的线程获取不到锁或等待时间十分长的情况。
+多个线程按照申请锁的顺序获取锁，线程直接进入队列，只有第一个线程能够获取锁，其他线程都会阻塞
+* 优点：线程不会饿死
+* 缺点：吞吐量下降，因为需要维护队列，一个线程到达后，需要检查队首线程是否在等待锁，如果有则自己需要挂起，放到队尾并且唤醒队首线程
 
-ReentrantLock 具有公平与非公平模型，默认非公平；synchronized 默认非公平模型。
+#### 非公平锁
+
+多个线程竞争获取锁，不需要按照申请锁的顺序
+* 优点：减少唤醒线程的消耗
+* 缺点：线程可能饿死
 
 ### 3.4 锁的膨胀
 
-synchronized 通过操作系统底层的 Mutex Lock 来实现线程同步，在阻塞和唤醒线程时需要经过操作系统来实现，较为耗费时间，这也是 JDK 6 之前 synchronized 效率低的原因，这种依赖操作系统底层实现的锁就是「重量级锁」。
-
-为了减少获取锁和释放锁带来的性能消耗，JDK 6 引入了「偏向锁」和「轻量级锁」。
-
-偏向锁：如果一段同步代码始终被同一个线程访问，则该线程会自动获取锁。
-
-轻量级锁：当遇到其他线程尝试竞争偏向锁时，偏向锁会升级为轻量级锁，此时其他线程会通过自旋的方式竞争锁，但不会阻塞。
-
-重量级锁：当自旋超过一定次数或存在第三个线程竞争锁，则升级为重量级锁，会将持有锁以外的所有线程阻塞。
-
-**偏向锁是通过对比锁对象对象头中的数据来加锁，避免了 CAS 操作；轻量级锁则是通过 CAS 和自旋避免了线程阻塞和唤醒**。它们相比于需要阻塞线程的重量级锁都提升了加解锁的效率。
+为了减少获取锁和释放锁带来的性能消耗，JDK 6 的 synchronized 引入了「偏向锁」和「轻量级锁」
+* 偏向锁：如果一段同步代码始终被同一个线程访问，则该线程会自动获取锁
+    * 通过对比锁对象对象头中的数据来加锁，避免了 CAS 操作
+* 轻量级锁：当遇到其他线程尝试竞争偏向锁时，偏向锁会升级为轻量级锁，此时其他线程会通过自旋的方式竞争锁，但不会阻塞
+    * 通过 CAS 和自旋避免了线程阻塞和唤醒
+* 重量级锁：当自旋超过一定次数或存在第三个线程竞争锁，则升级为重量级锁，会将持有锁以外的所有线程阻塞
 
 ## 4. 并发工具
 
-### 4.1 Condition
+### AQS
 
-Condition 是显式锁下 wait / notify 机制的实现。和内置锁的区别在于内置锁只能对应一个等待池，而一个显式锁可以有多个 Condition 对象，每个 Condition 对象对应一个等待池，可以根据不同的等待条件将线程放入不同的等待池，具有比内置锁更细的粒度。
-
-```java
-Lock lock = new ReentrantLock();
-Condition condition = lock.newCondition();
-```
-
-Condition 下的等待线程通用模式：
-
-```java
-lock.lock();
-try{
-    while(条件不满足){
-        condition.await();
-    }
-    // 满足条件，执行任务
-}finally{
-    lock.unlock();
-}
-```
-
-Condition 下的通知线程通用模式：
-
-```java
-lock.lock();
-try{
-    // 完成条件
-    condition.signalAll();
-}finally{
-    lock.unlock();
-}
-```
-
-### 4.2 CountDownLatch
+### CountDownLatch
 
 两种使用场景：
 
@@ -197,67 +165,3 @@ try{
         System.out.println("main completed");
     }
     ```
-
-### 4.3 CyclicBarrier
-
-一组线程都达到指定状态后再统一继续执行。
-
-```java
-public static void main(String[] args) {
-
-    // 线程个数
-    CyclicBarrier cyclicBarrier = new CyclicBarrier(5);
-    ExecutorService executorService = Executors.newFixedThreadPool(5);
-
-    for (int i = 0; i < 5; i++) {
-        int num = i;
-        executorService.submit(() -> {
-            try {
-                System.out.println(num + " is ready");
-                // 阻塞至所有线程准备好
-                cyclicBarrier.await();
-                System.out.println("begin");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (BrokenBarrierException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-}
-```
-
-CyclicBarrier 和 CountDownLatch 的区别：
-
-* 前者用于一组线程的互相等待，而后者本质上是待 countDown() 的发生
-* 前者可以重复使用，后者只能使用一次
-
-### 4.4 Semaphore
-
-限制线程的并发数量，可用于多线程获取有限且可重复利用的共享资源的场景。
-
-```java
-public static void main(String[] args) {
-
-    Semaphore semaphore = new Semaphore(5);
-    ExecutorService executorService = Executors.newFixedThreadPool(5);
-
-    for (int i = 0; i < 20; i++) {
-        int num = i;
-        executorService.submit(() -> {
-            try {
-                // 获取锁
-                semaphore.acquire();
-                System.out.println(num + " is running");
-                Thread.sleep(1000L);
-                // 释放锁
-                semaphore.release();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-    }
-}
-```
-
-以上程序每隔 1s 会打印 5 行字符。
