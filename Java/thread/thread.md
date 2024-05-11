@@ -44,7 +44,7 @@ Java 中 Thread 类中的关键方法均为 native 方法，说明 Java 底层�
 
 * NEW：仅仅是 JVM 为其分配了内存，初始化变量
 * RUNNABLE：创建栈和程序计数器，等待被 CPU 调度
-* RUNNING：获得了 CPU 的时间片，处于执行状态
+* RUNNING：获得了 CPU 的时间片，处于执行状态（JDK 中并无此状态）
 * WAITING / TIMEWAITING：进入锁对象的等待队列中，会释放 CPU 资源，需要其他线程唤醒或到达设定时间
 * BLOCKED：线程因竞争不到锁而产生阻塞，会释放 CPU 资源，只有获得锁才会脱离阻塞态
 * TERMINATED：线程执行完毕或出现异常

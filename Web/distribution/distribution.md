@@ -96,8 +96,16 @@ CAP 指一致性（Consistency）、可用性（Availability）、分区容忍�
 	2. B cache miss 读 db 为 20
 	3. B 更新 cache 为 20
 	4. A 更新 db 为 21
+* 主从延迟的不一致
+	1. A 删缓存，更新为 21
+	2. B cache miss 读 db ，由于主从延迟为 20
+	3. B 更新 cache 为 20
 解决：
-* 再删一次
+* 业务中再删一次
+* 订阅 binlog，从库同步完毕后再删除缓存
+
+
+
 
 ##### 选择
 
