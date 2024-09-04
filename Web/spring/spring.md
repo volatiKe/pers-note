@@ -1,8 +1,4 @@
-# Spring
-
----
-
-## 1. Spring Boot 自动配置原理
+## Spring Boot 自动配置原理
 
 ### 1.1 组件导入方式
 
